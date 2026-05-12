@@ -1,0 +1,186 @@
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 8rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.heroDesc {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btnWhite {
+  background-color: white;
+  color: var(--primary);
+}
+
+.btnWhite:hover {
+  background-color: var(--background);
+  color: var(--primary-hover);
+}
+
+.btnOutlineWhite {
+  border-color: rgba(255,255,255,0.5);
+  color: white;
+}
+
+.btnOutlineWhite:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-color: white;
+  color: white;
+}
+
+/* Founders Section */
+.founderImage {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.founderName {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.founderRole {
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Funding */
+.fundingSection {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 0;
+}
+
+.logoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 100px;
+  background-color: white;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logoWrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+.fundLogo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.logoWrapper:hover .fundLogo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+.fundText {
+  font-weight: 700;
+  text-align: center;
+  color: var(--primary);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.logoWrapper:hover .fundText {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+/* Gallery */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  aspect-ratio: 4/3;
+}
+
+.galleryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.galleryItem:hover .galleryImg {
+  transform: scale(1.05);
+}
+
+.galleryCaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 2rem 1rem 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover .galleryCaption {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+}

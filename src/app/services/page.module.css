@@ -1,0 +1,83 @@
+.servicesLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .servicesLayout {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+.servicesTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.servicesTable th {
+  background-color: var(--background);
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--border);
+}
+
+.servicesTable td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.servicesTable tr:last-child td {
+  border-bottom: none;
+}
+
+.serviceName {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.price {
+  font-family: monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Form */
+.formCard {
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.formCard h3 {
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.successMessage {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  text-align: center;
+  border: 1px solid #10b981;
+}
