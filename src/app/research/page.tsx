@@ -1,19 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Search, ExternalLink, GraduationCap, FlaskConical, Microscope, User } from "lucide-react";
-import { researchersList } from "@/data/lab";
-import { publicationsList } from "@/data/publications";
+import { getDocuments } from "@/services/firebaseCrud";
 import styles from "./page.module.css";
 
 export default function ResearchPage() {
   const [pubSearch, setPubSearch] = useState("");
   const [activeTab, setActiveTab] = useState("Founder");
   const [currentPage, setCurrentPage] = useState(1);
+  const [researchersList, setResearchersList] = useState<any[]>([]);
+  const [publicationsList, setPublicationsList] = useState<any[]>([]);
   const itemsPerPage = 30;
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const fac = await getDocuments('faculty');
+      const stu = await getDocuments('phd_students');
+      const techs = await getDocuments('lab_technicians');
+      const pub = await getDocuments('publications');
+      
+      const mappedFac = fac.map((f: any) => ({ ...f, category: f.designation?.toLowerCase() === 'founder' ? 'Founder' : 'Faculty', role: f.designation, researchArea: f.researchAreas }));
+      const mappedStu = stu.map((s: any) => ({ ...s, category: 'Phd Scholarsh', role: 'Ph.D. research scholar', researchArea: s.topic, qualification: s.year }));
+      const mappedTechs = techs.map((t: any) => ({ ...t, category: 'Lab Technician', role: t.role || 'Lab Technician' }));
+      
+      setResearchersList([...mappedFac, ...mappedStu, ...mappedTechs]);
+      setPublicationsList(pub.sort((a: any,b: any) => (b.year || 0) - (a.year || 0)));
+    };
+    fetchData();
+  }, []);
+
   const filteredPublications = publicationsList.filter((pub) =>
-    pub.authors.some((author) => author.toLowerCase().includes(pubSearch.toLowerCase())) ||
+    pub.authors.some((author: string) => author.toLowerCase().includes(pubSearch.toLowerCase())) ||
     pub.title.toLowerCase().includes(pubSearch.toLowerCase())
   );
 
@@ -26,7 +44,7 @@ export default function ResearchPage() {
     { id: "Founder", label: "Founder", icon: <User size={18} /> },
     { id: "Faculty", label: "Faculty", icon: <User size={18} /> },
     { id: "Phd Scholarsh", label: "Phd Scholarsh", icon: <GraduationCap size={18} /> },
-    { id: "Mpharm", label: "Mpharm", icon: <FlaskConical size={18} /> }
+    { id: "Lab Technician", label: "Lab Technician", icon: <FlaskConical size={18} /> }
   ];
 
   const activeResearchers = researchersList.filter(r => r.category === activeTab);

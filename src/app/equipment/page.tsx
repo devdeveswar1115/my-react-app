@@ -2,11 +2,21 @@
 
 import { useState } from "react";
 import { Search } from "lucide-react";
-import { equipmentList } from "@/data/lab";
+import { useEffect } from "react";
+import { getDocuments } from "@/services/firebaseCrud";
 import styles from "./page.module.css";
 
 export default function EquipmentPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [equipmentList, setEquipmentList] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getDocuments('equipment');
+      setEquipmentList(data);
+    };
+    fetchData();
+  }, []);
 
   const filteredEquipment = equipmentList.filter(
     (eq) =>
@@ -44,7 +54,7 @@ export default function EquipmentPage() {
                 <h3 className={styles.equipmentName}>{eq.name}</h3>
                 <p className={styles.equipmentDesc}>{eq.description}</p>
                 <ul className={styles.specsList}>
-                  {eq.specs.map((spec, idx) => (
+                  {eq.specs?.map((spec: string, idx: number) => (
                     <li key={idx}>{spec}</li>
                   ))}
                 </ul>

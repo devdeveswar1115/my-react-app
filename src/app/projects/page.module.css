@@ -150,3 +150,67 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+/* Tabs and Lists */
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabBtn:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.activeTab {
+  background: var(--primary);
+  color: white;
+}
+
+.activeTab:hover {
+  background: var(--primary);
+}
+
+.listsContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.listSection {
+  margin-bottom: 2rem;
+}
+
+.customList {
+  list-style: none;
+  padding: 0;
+}
+
+.customList li {
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.customList li strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+

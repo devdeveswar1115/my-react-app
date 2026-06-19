@@ -2,43 +2,32 @@
 
 import { useState, useEffect } from 'react';
 import styles from './EventsSlider.module.css';
-
-const dummyEvents = [
-  {
-    id: 1,
-    title: "Annual Lab Festival 2026",
-    description: "Celebrating our achievements and welcoming new researchers. A day filled with scientific poster presentations and cultural events.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 2,
-    title: "International Nanotechnology Seminar",
-    description: "Guest lectures from leading experts in solid-state physics, discussing the future of quantum materials and energy storage.",
-    image: "https://images.unsplash.com/photo-1475721025585-249e0a0ee447?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 3,
-    title: "New XRD Machine Installation",
-    description: "Upgrading our structural analysis capabilities with state-of-the-art equipment to push the boundaries of materials research.",
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 4,
-    title: "Advanced Biomaterials Workshop",
-    description: "Hands-on training session for PhD scholars and MPharm researchers focusing on novel drug delivery systems.",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=1200",
-  }
-];
+import { Calendar, MapPin } from 'lucide-react';
+import { getDocuments } from '../services/firebaseCrud';
 
 export default function EventsSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [events, setEvents] = useState<any[]>([]);
 
   useEffect(() => {
+    const fetchEvents = async () => {
+      const data = await getDocuments('events');
+      setEvents(data);
+    };
+    fetchEvents();
+  }, []);
+
+  useEffect(() => {
+    if (events.length === 0) return;
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % dummyEvents.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [events]);
+
+  if (events.length === 0) {
+    return <div style={{ textAlign: 'center', padding: '2rem' }}>No events found.</div>;
+  }
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
@@ -50,13 +39,27 @@ export default function EventsSlider() {
         className={styles.slidesWrapper}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {dummyEvents.map((event) => (
+        {events.map((event) => (
           <div key={event.id} className={styles.slide}>
             <div className={styles.imageOverlay}></div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={event.image} alt={event.title} className={styles.slideImage} />
+            {event.image && <img src={event.image} alt={event.title} className={styles.slideImage} />}
             <div className={styles.slideContent}>
               <h3 className={styles.slideTitle}>{event.title}</h3>
+              {(event.date || event.venue) && (
+                <div className={styles.slideMeta}>
+                  {event.date && (
+                    <span className={styles.metaItem}>
+                      <Calendar size={14} /> {event.date}
+                    </span>
+                  )}
+                  {event.venue && (
+                    <span className={styles.metaItem}>
+                      <MapPin size={14} /> {event.venue}
+                    </span>
+                  )}
+                </div>
+              )}
               <p className={styles.slideDesc}>{event.description}</p>
             </div>
           </div>
@@ -64,7 +67,7 @@ export default function EventsSlider() {
       </div>
       
       <div className={styles.controls}>
-        {dummyEvents.map((_, index) => (
+        {events.map((_, index) => (
           <button
             key={index}
             className={`${styles.dot} ${index === currentIndex ? styles.activeDot : ''}`}

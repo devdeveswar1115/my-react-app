@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { servicesList } from "@/data/lab";
+import { useEffect, useState } from "react";
+import { getDocuments } from "@/services/firebaseCrud";
 import { Send } from "lucide-react";
 import styles from "./page.module.css";
 
@@ -10,17 +10,29 @@ export default function ServicesPage() {
     name: "",
     email: "",
     service: "",
+    category: "",
     message: ""
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [servicesList, setServicesList] = useState<any[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      const data = await getDocuments('services');
+      setServicesList(data);
+    };
+    fetchServices();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     
     try {
-      const response = await fetch("https://formspree.io/f/mrejbllr", {
+      const response = await fetch("https://formspree.io/f/meewbbvb", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -30,7 +42,7 @@ export default function ServicesPage() {
       
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: "", email: "", service: "", message: "" });
+        setFormData({ name: "", email: "", service: "", category: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         alert("Oops! There was a problem submitting your form.");
@@ -41,6 +53,11 @@ export default function ServicesPage() {
       setSubmitting(false);
     }
   };
+
+  const totalPages = Math.ceil(servicesList.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentServices = servicesList.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div className="section container">
@@ -64,7 +81,7 @@ export default function ServicesPage() {
               </tr>
             </thead>
             <tbody>
-              {servicesList.map((service) => (
+              {currentServices.map((service) => (
                 <tr key={service.id}>
                   <td className={styles.serviceName}>{service.instrument}</td>
                   <td>{service.serviceType}</td>
@@ -76,6 +93,30 @@ export default function ServicesPage() {
               ))}
             </tbody>
           </table>
+          
+          {totalPages > 1 && (
+            <div className={styles.pagination} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+              <button 
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                className="btn btn-outline"
+                style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
+              >
+                Previous
+              </button>
+              <span style={{ fontWeight: '500', color: 'var(--text-main)' }}>
+                Page {currentPage} of {totalPages}
+              </span>
+              <button 
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className="btn btn-outline"
+                style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
+              >
+                Next
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Request Form Section */}
@@ -120,6 +161,23 @@ export default function ServicesPage() {
                   <option key={s.id} value={s.id}>{s.instrument} - {s.serviceType}</option>
                 ))}
                 <option value="other">Other / Custom Request</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label" htmlFor="category">Sample Category</label>
+              <select
+                id="category"
+                required
+                className="form-input"
+                value={formData.category}
+                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+              >
+                <option value="" disabled>Select category...</option>
+                <option value="SOA">SOA</option>
+                <option value="University College">University College</option>
+                <option value="National Lab">National Lab</option>
+                <option value="Industry / Others">Industry / Others</option>
               </select>
             </div>
 

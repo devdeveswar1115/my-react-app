@@ -27,6 +27,7 @@ export function Navbar() {
     { href: "/research", label: "Researchers & Publications" },
     { href: "/services", label: "Services" },
     { href: "/projects", label: "Projects" },
+    { href: "/internships", label: "Internships & Training" },
   ];
 
   return (

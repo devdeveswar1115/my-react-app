@@ -1,15 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { ArrowRight, Microscope } from "lucide-react";
 import { labData } from "@/data/lab";
 import styles from "./page.module.css";
 import EventsSlider from "@/components/EventsSlider";
+import LeadersSlider from "@/components/LeadersSlider";
+import { getDocuments } from "@/services/firebaseCrud";
 
 // const NanoAnimation = dynamic(() => import('@/components/NanoAnimation'), { ssr: false });
 //import NanoAnimation from '@/components/NanoAnimation';
 export default function Home() {
-  const { about, founders, funding, gallery } = labData;
+  const { about, funding, gallery } = labData;
+  useEffect(() => {
+    // Founders fetch moved to LeadersSlider if needed, or they just populate leaders collection
+  }, []);
 
   return (
     <>
@@ -26,6 +33,24 @@ export default function Home() {
             <Link href="/services" className={`btn ${styles.btnOutlineWhite}`}>
               Testing Services
             </Link>
+            <Link href="/internships" className={`btn ${styles.btnOutlineWhite}`}>
+              Internship Program
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testing Services Highlight Section */}
+      <section className="section" style={{ backgroundColor: 'var(--bg-alt)' }}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <h2 className="section-title">Testing & Analysis Services</h2>
+          <p className="section-subtitle">
+            We provide state-of-the-art analytical equipment and testing services for academic and industrial research.
+          </p>
+          <div style={{ marginTop: '2rem' }}>
+            <Link href="/services" className={`btn btn-primary`}>
+              View All Services & Request Testing
+            </Link>
           </div>
         </div>
       </section>
@@ -39,35 +64,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Founders Section */}
+      {/* Leaders Voice Section */}
       <section className="section">
-        <div className="container">
-          <h2 className="section-title">Leadership & Founders</h2>
-          <p className="section-subtitle">Guiding our mission to advance fundamental materials research.</p>
-
-          <div className="grid grid-2">
-            {founders.map((founder) => (
-              <div key={founder.id} className="card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={founder.image} 
-                  alt={founder.name} 
-                  className={styles.founderImage} 
-                  style={{ objectPosition: (founder as any).imagePosition || 'top center' }} 
-                />
-                <h3 className={styles.founderName}>{founder.name}</h3>
-                {founder.qualification && (
-                  <p className={styles.founderRole} style={{ marginBottom: "0.25rem", color: "var(--text-main)" }}>
-                    <strong>Qualification:</strong> {founder.qualification}
-                  </p>
-                )}
-                <p className={styles.founderRole}>{founder.designation}</p>
-                <p style={{ color: 'var(--text-main)' }}>{founder.bio}</p>
-              </div>
-            ))}
-          </div>
+        <div className="container" style={{ textAlign: "center" }}>
+          <h2 className="section-title">Leaders Voice</h2>
+          <p className="section-subtitle">Messages from our visionary leadership.</p>
+          <LeadersSlider />
         </div>
       </section>
+
+      {/* End Leaders Voice Section */}
 
       {/* Funding Section */}
       <section className={styles.fundingSection}>
