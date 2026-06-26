@@ -11,6 +11,16 @@ import {
   orderBy
 } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
+import { setDoc } from 'firebase/firestore';
+
+const updateGlobalTimestamp = async () => {
+  try {
+    const docRef = doc(db, 'metadata', 'site_info');
+    await setDoc(docRef, { lastUpdated: new Date() }, { merge: true });
+  } catch (e) {
+    console.error("Failed to update global timestamp:", e);
+  }
+};
 
 // Add a document
 export const addDocument = async (collectionName: string, data: any) => {
@@ -19,6 +29,7 @@ export const addDocument = async (collectionName: string, data: any) => {
       ...data,
       createdAt: new Date()
     });
+    await updateGlobalTimestamp();
     return docRef.id;
   } catch (error) {
     console.error("Error adding document: ", error);
@@ -34,6 +45,7 @@ export const updateDocument = async (collectionName: string, id: string, data: a
       ...data,
       updatedAt: new Date()
     });
+    await updateGlobalTimestamp();
   } catch (error) {
     console.error("Error updating document: ", error);
     throw error;
@@ -44,6 +56,7 @@ export const updateDocument = async (collectionName: string, id: string, data: a
 export const deleteDocument = async (collectionName: string, id: string) => {
   try {
     await deleteDoc(doc(db, collectionName, id));
+    await updateGlobalTimestamp();
   } catch (error) {
     console.error("Error deleting document: ", error);
     throw error;

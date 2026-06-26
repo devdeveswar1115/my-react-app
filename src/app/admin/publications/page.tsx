@@ -19,6 +19,7 @@ export default function PublicationsPage() {
   const [abstract, setAbstract] = useState('');
   const [image, setImage] = useState('');
   const [pdfLink, setPdfLink] = useState('');
+  const [doi, setDoi] = useState('');
 
   const fetchPublications = async () => {
     setLoading(true);
@@ -40,6 +41,7 @@ export default function PublicationsPage() {
     setAbstract('');
     setImage('');
     setPdfLink('');
+    setDoi('');
     setCurrentEditId(null);
   };
 
@@ -52,6 +54,7 @@ export default function PublicationsPage() {
       setAbstract(pub.abstract || '');
       setImage(pub.image || '');
       setPdfLink(pub.pdfLink || pub.link || '');
+      setDoi(pub.doi || '');
       setCurrentEditId(pub.id);
     } else {
       resetForm();
@@ -67,7 +70,7 @@ export default function PublicationsPage() {
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     const authorsArray = authors.split(',').map(a => a.trim()).filter(a => a);
-    const data = { title, authors: authorsArray, journal, year: parseInt(year) || year, abstract, image, pdfLink };
+    const data = { title, authors: authorsArray, journal, year: parseInt(year) || year, abstract, image, pdfLink, doi };
 
     if (currentEditId) {
       await updateDocument('publications', currentEditId, data);
@@ -86,11 +89,24 @@ export default function PublicationsPage() {
     }
   };
 
+  const handleDeleteAll = async () => {
+    if (confirm("Are you ABSOLUTELY sure you want to delete ALL publications? This action cannot be undone.")) {
+      setLoading(true);
+      for (const pub of publications) {
+        await deleteDocument('publications', pub.id);
+      }
+      fetchPublications();
+    }
+  };
+
   return (
     <div>
       <div className={styles.cardHeader}>
         <h2>Manage Publications</h2>
-        <button className={styles.btnPrimary} onClick={() => handleOpenModal()}>+ Add Publication</button>
+        <div>
+          <button className={styles.btnDelete} onClick={handleDeleteAll} style={{ marginRight: '1rem' }}>Delete All</button>
+          <button className={styles.btnPrimary} onClick={() => handleOpenModal()}>+ Add Publication</button>
+        </div>
       </div>
 
       <div className={styles.card}>
@@ -159,6 +175,10 @@ export default function PublicationsPage() {
               <div className={styles.formGroup}>
                 <label>Link / PDF Link</label>
                 <input value={pdfLink} onChange={e => setPdfLink(e.target.value)} />
+              </div>
+              <div className={styles.formGroup}>
+                <label>DOI</label>
+                <input value={doi} onChange={e => setDoi(e.target.value)} placeholder="e.g., 10.1016/j.jep.2023.116670" />
               </div>
               <div className={styles.formGroup}>
                 <label>Cover Image (Optional)</label>

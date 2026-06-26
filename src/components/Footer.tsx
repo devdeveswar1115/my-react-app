@@ -2,16 +2,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail, Monitor } from "lucide-react";
 import styles from "./Footer.module.css";
+import LastUpdatedText from "./LastUpdatedText";
 
 export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerGrid}`}>
         <div className={styles.footerBrand}>
-          <div className={styles.logo}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.jpg" alt="Herbal Nanotechnology Lab Logo" className={styles.logoImg} />
-            <span>Herbal Nanotechnology Lab</span>
+          <div className={styles.logo} style={{ display: 'flex', alignItems: 'center' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.jpg" alt="Herbal Nanotechnology Lab Logo" className={styles.logoImg} />
+            </Link>
+            <a href="https://soa.ac.in" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', marginLeft: '10px' }}>
+              <img src="/SOA_logo.png" alt="SOA Logo" className={styles.logoImg} />
+            </a>
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit', marginLeft: '10px' }}>
+              <span>Herbal Nanotechnology Lab</span>
+            </Link>
           </div>
           <p className={styles.description}>
             Dedicated to the discovery, synthesis, and characterization of novel materials.
@@ -31,17 +39,27 @@ export function Footer() {
         <div className={styles.footerContact}>
           <h4 className={styles.heading}>Contact Us</h4>
           <ul>
-            <li>
-              <MapPin size={16} />
-              <span>123 Science Way, Innovation Park</span>
+            <li style={{ alignItems: 'flex-start' }}>
+              <MapPin size={16} style={{ marginTop: '4px', flexShrink: 0 }} />
+              <span>
+                <strong>Herbal Nanotechnology Lab</strong><br />
+                1. School of Pharmaceutical Sciences (3rd Floor)<br />
+                2. 5th Floor, MLVP<br />
+                SIKSHA O ANUSANDHAN, CAMPUS- 2<br />
+                KALINGANAGAR, BHUBANESWAR<br />
+                ODISHA, PIN- 751003
+              </span>
             </li>
             <li>
               <Phone size={16} />
-              <span>+1 (555) 123-4567</span>
+              <span>+91 98882 06383</span>
             </li>
-            <li>
-              <Mail size={16} />
-              <span>info@advmatlab.edu</span>
+            <li style={{ alignItems: 'flex-start' }}>
+              <Mail size={16} style={{ marginTop: '4px', flexShrink: 0 }} />
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <a href="mailto:dbtbuildersoadu2022@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>dbtbuildersoadu2022@gmail.com</a>
+                <a href="mailto:goutamrath123@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>goutamrath123@gmail.com</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -50,7 +68,7 @@ export function Footer() {
         <div className={`container ${styles.footerBottomFlex}`}>
           <div className={styles.footerBottomLeft}>
             <Monitor size={14} className={styles.icon} />
-            <span>Last site update on May 02, 2026 13:56:00 (IST)</span>
+            <LastUpdatedText />
           </div>
           <div className={styles.footerBottomCenter}>
             <p>&copy; 2026 Herbal Nanotechnology Lab. All rights reserved. | Developed by <a href="https://devdeveswar1115.github.io/" target="_blank" rel="noopener noreferrer" className={styles.devLink}>Dev D Rana</a></p>

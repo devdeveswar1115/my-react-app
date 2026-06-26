@@ -21,7 +21,7 @@ export default function ResearchPage() {
       const pub = await getDocuments('publications');
       
       const mappedFac = fac.map((f: any) => ({ ...f, category: f.designation?.toLowerCase() === 'founder' ? 'Founder' : 'Faculty', role: f.designation, researchArea: f.researchAreas }));
-      const mappedStu = stu.map((s: any) => ({ ...s, category: 'Phd Scholarsh', role: 'Ph.D. research scholar', researchArea: s.topic, qualification: s.year }));
+      const mappedStu = stu.map((s: any) => ({ ...s, category: 'Ph.D. Scholars', role: 'Ph.D. research scholar', researchArea: s.topic, qualification: s.year }));
       const mappedTechs = techs.map((t: any) => ({ ...t, category: 'Lab Technician', role: t.role || 'Lab Technician' }));
       
       setResearchersList([...mappedFac, ...mappedStu, ...mappedTechs]);
@@ -43,7 +43,7 @@ export default function ResearchPage() {
   const tabs = [
     { id: "Founder", label: "Founder", icon: <User size={18} /> },
     { id: "Faculty", label: "Faculty", icon: <User size={18} /> },
-    { id: "Phd Scholarsh", label: "Phd Scholarsh", icon: <GraduationCap size={18} /> },
+    { id: "Ph.D. Scholars", label: "Ph.D. Scholars", icon: <GraduationCap size={18} /> },
     { id: "Lab Technician", label: "Lab Technician", icon: <FlaskConical size={18} /> }
   ];
 
@@ -96,11 +96,23 @@ export default function ResearchPage() {
                   <div className={styles.researchArea}>
                     <strong>Focus:</strong> {researcher.researchArea}
                   </div>
-                  {researcher.email && (
-                    <a href={`mailto:${researcher.email}`} className={styles.contactLink}>
-                      <Mail size={16} /> Contact
-                    </a>
-                  )}
+                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+                    {researcher.email && (
+                      <a href={`mailto:${researcher.email}`} className={styles.contactLink}>
+                        <Mail size={16} /> Contact
+                      </a>
+                    )}
+                    {(researcher.googleScholarId || researcher.googleScholarUrl) && (
+                      <a 
+                        href={researcher.googleScholarUrl || `https://scholar.google.com/citations?user=${researcher.googleScholarId}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={styles.contactLink}
+                      >
+                        <GraduationCap size={16} /> Google Scholar
+                      </a>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -135,16 +147,49 @@ export default function ResearchPage() {
             {currentPublications.length > 0 ? (
               currentPublications.map((pub) => (
                 <div key={pub.id} className={styles.pubCard}>
-                  <h3 className={styles.pubTitle}>{pub.title}</h3>
+                  <h3 className={styles.pubTitle}>
+                    {pub.link || pub.doi ? (
+                      <a 
+                        href={pub.link ? (pub.link.startsWith('http') ? pub.link : `https://doi.org/${pub.link}`) : (pub.doi?.startsWith('http') ? pub.doi : `https://doi.org/${pub.doi}`)} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: 'none', color: 'inherit' }}
+                      >
+                        {pub.title}
+                      </a>
+                    ) : (
+                      pub.title
+                    )}
+                  </h3>
                   <div className={styles.pubAuthors}>{pub.authors.join(", ")}</div>
                   <div className={styles.pubMeta}>
                     <span className={styles.pubJournal}>{pub.journal}</span>
                     <span>•</span>
                     <span>{pub.year}</span>
+                    {pub.doi && (
+                      <>
+                        <span>•</span>
+                        <a 
+                          href={pub.doi.startsWith('http') ? pub.doi : `https://doi.org/${pub.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: 'var(--primary)', fontWeight: 500 }}
+                        >
+                          DOI: {pub.doi}
+                        </a>
+                      </>
+                    )}
                   </div>
-                  <a href={pub.link} className={styles.pubLink} target="_blank" rel="noopener noreferrer">
-                    Read Paper <ExternalLink size={14} />
-                  </a>
+                  {pub.link && (
+                    <a 
+                      href={pub.link.startsWith('http') ? pub.link : `https://doi.org/${pub.link}`} 
+                      className={styles.pubLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      Read Paper <ExternalLink size={14} />
+                    </a>
+                  )}
                 </div>
               ))
             ) : (

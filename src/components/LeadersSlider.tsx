@@ -11,20 +11,8 @@ export default function LeadersSlider() {
 
   useEffect(() => {
     const fetchLeadersAndFounders = async () => {
-      // Fetch leaders
       const leadersData = await getDocuments('leaders');
-      
-      // Fetch founders
-      const allFaculty = await getDocuments('faculty');
-      const foundersList = allFaculty.filter((f: any) => f.designation === 'Founder' || f.designation === 'founder');
-      foundersList.sort((a: any, b: any) => {
-        if (a.name.includes('Rath')) return -1;
-        if (b.name.includes('Rath')) return 1;
-        return 0;
-      });
-
-      // Merge both into the slider
-      setLeaders([...leadersData, ...foundersList]);
+      setLeaders(leadersData);
     };
     fetchLeadersAndFounders();
   }, []);

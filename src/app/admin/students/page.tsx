@@ -17,6 +17,7 @@ export default function StudentsPage() {
   const [year, setYear] = useState('');
   const [email, setEmail] = useState('');
   const [image, setImage] = useState('');
+  const [googleScholarUrl, setGoogleScholarUrl] = useState('');
 
   const fetchStudents = async () => {
     setLoading(true);
@@ -35,6 +36,7 @@ export default function StudentsPage() {
     setYear('');
     setEmail('');
     setImage('');
+    setGoogleScholarUrl('');
     setCurrentEditId(null);
   };
 
@@ -45,6 +47,7 @@ export default function StudentsPage() {
       setYear(stu.year || '');
       setEmail(stu.email || '');
       setImage(stu.image || '');
+      setGoogleScholarUrl(stu.googleScholarUrl || stu.googleScholarId || '');
       setCurrentEditId(stu.id);
     } else {
       resetForm();
@@ -59,7 +62,7 @@ export default function StudentsPage() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = { name, topic, year, email, image };
+    const data = { name, topic, year, email, image, googleScholarUrl };
 
     if (currentEditId) {
       await updateDocument('phd_students', currentEditId, data);
@@ -142,6 +145,10 @@ export default function StudentsPage() {
               <div className={styles.formGroup}>
                 <label>Email</label>
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
+              </div>
+              <div className={styles.formGroup}>
+                <label>Google Scholar Link</label>
+                <input value={googleScholarUrl} onChange={e => setGoogleScholarUrl(e.target.value)} placeholder="https://scholar.google.com/citations?user=..." />
               </div>
               <div className={styles.formGroup}>
                 <label>Image</label>

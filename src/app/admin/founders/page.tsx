@@ -18,6 +18,7 @@ export default function FoundersPage() {
   const [qualification, setQualification] = useState('');
   const [researchAreas, setResearchAreas] = useState('');
   const [bio, setBio] = useState('');
+  const [googleScholarUrl, setGoogleScholarUrl] = useState('');
 
   const fetchFounders = async () => {
     setLoading(true);
@@ -38,6 +39,7 @@ export default function FoundersPage() {
     setQualification('');
     setResearchAreas('');
     setBio('');
+    setGoogleScholarUrl('');
     setCurrentEditId(null);
   };
 
@@ -49,6 +51,7 @@ export default function FoundersPage() {
       setQualification(fac.qualification || '');
       setResearchAreas(fac.researchAreas || '');
       setBio(fac.bio || '');
+      setGoogleScholarUrl(fac.googleScholarUrl || fac.googleScholarId || '');
       setCurrentEditId(fac.id);
     } else {
       resetForm();
@@ -70,7 +73,8 @@ export default function FoundersPage() {
       image, 
       qualification, 
       researchAreas,
-      bio 
+      bio,
+      googleScholarUrl 
     };
 
     if (currentEditId) {
@@ -148,6 +152,10 @@ export default function FoundersPage() {
               <div className={styles.formGroup}>
                 <label>Email</label>
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
+              </div>
+              <div className={styles.formGroup}>
+                <label>Google Scholar Link</label>
+                <input value={googleScholarUrl} onChange={e => setGoogleScholarUrl(e.target.value)} placeholder="https://scholar.google.com/citations?user=..." />
               </div>
               <div className={styles.formGroup}>
                 <label>Image</label>

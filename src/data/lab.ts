@@ -97,7 +97,7 @@ export const researchersList = [
     id: "phd1",
     name: "Ms. Bibhanwita Satpathy",
     role: "Ph.D. research scholar",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-based phyto-formulation development against Alzheimer's disease.",
     email: "",
     image: "/PHD/BIBHANWITA SATAPATHY.png"
@@ -106,7 +106,7 @@ export const researchersList = [
     id: "phd2",
     name: "Mr. Ajit Mishra",
     role: "Ph.D. research scholar",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-formulation development against dry-eye syndrome.",
     email: "",
     image: "/PHD/AJIT MISHRA.jpg"
@@ -115,7 +115,7 @@ export const researchersList = [
     id: "phd3",
     name: "Mr. Guru Prasanna Sahoo",
     role: "Ph.D. research scholar",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-formulation development against breast cancer.",
     email: "",
     image: "/PHD/GURU PRASANNA SAHOO.png"
@@ -124,7 +124,7 @@ export const researchersList = [
     id: "phd4",
     name: "Mr. Debasish Tripathy",
     role: "Ph.D. research scholar",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-formulation development against chronic wound healing.",
     email: "",
     image: "/PHD/DEBASHISH TRIPATHY.png"
@@ -133,7 +133,7 @@ export const researchersList = [
     id: "phd5",
     name: "Ms. Somali Dey",
     role: "Ph.D. research scholar (UGC-JRF)",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-formulation development against arthritis.",
     email: "",
     image: "/logo.jpg"
@@ -142,7 +142,7 @@ export const researchersList = [
     id: "phd6",
     name: "Ms. Bismita Devi",
     role: "Ph.D. research scholar",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-based phyto-formulation development against diabetic wound healing.",
     email: "",
     image: "/PHD/BISMITA DEVI.png"
@@ -151,7 +151,7 @@ export const researchersList = [
     id: "phd7",
     name: "Ms. Kajal Ray",
     role: "Ph.D. research scholar",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Anticancer activity and formulation study of Ailanthus excelsa.",
     email: "",
     image: "/PHD/KAJAL RAY.png"
@@ -160,7 +160,7 @@ export const researchersList = [
     id: "phd8",
     name: "Ms. Roshini Jena",
     role: "Junior Research Fellow (JRF)",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Management of rheumatoid arthritis.",
     email: "",
     image: "/PHD/ROSHINI JENA.png"
@@ -169,7 +169,7 @@ export const researchersList = [
     id: "phd9",
     name: "Ms. Sonali Mandal",
     role: "Project Associate-1",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Management of peri-implant mucositis.",
     email: "",
     image: "/PHD/SONALI MANDAL.png"
@@ -178,7 +178,7 @@ export const researchersList = [
     id: "phd10",
     name: "Mr. Tushar Kanti Rajwar",
     role: "Project Technician & Ph.D. research scholar",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-based formulation development against post-surgical breast cancerous disease.",
     email: "",
     image: "/PHD/TUSHAR KANTI RAJWAR.png"
@@ -187,7 +187,7 @@ export const researchersList = [
     id: "phd11",
     name: "Ms. Ivy Saha",
     role: "Ph.D. research scholar (CSIR-SRF)",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-based formulation development against cancerous disease.",
     email: "",
     image: "/PHD/IVY SAHA.png"
@@ -196,7 +196,7 @@ export const researchersList = [
     id: "phd12",
     name: "Ms. Ritu Mahanty",
     role: "Ph.D. research scholar",
-    category: "Phd Scholarsh",
+    category: "Ph.D. Scholars",
     researchArea: "Nano-based phyto-formulation development against MDR.",
     email: "",
     image: "/FACULTY/RITU MAHANTY.png"

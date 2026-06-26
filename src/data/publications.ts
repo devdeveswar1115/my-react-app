@@ -10,7 +10,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 23 (2), 564-578, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.935532"
+    "doi": "https://doi.org/10.3109/10717544.2014.935532"
   },
   {
     "id": "p2",
@@ -24,7 +24,7 @@ export const publicationsList = [
     ],
     "journal": "Archives of medical research 51 (5), 363-374, 2020",
     "year": 2020,
-    "link": "https://doi.org/10.1016/j.arcmed.2020.04.020"
+    "doi": "https://doi.org/10.1016/j.arcmed.2020.04.020"
   },
   {
     "id": "p3",
@@ -36,7 +36,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of drug targeting 26 (8), 617-632, 2018",
     "year": 2018,
-    "link": "https://doi.org/10.3390/pharmaceutics16070932"
+    "doi": "https://doi.org/10.3390/pharmaceutics16070932"
   },
   {
     "id": "p4",
@@ -50,7 +50,7 @@ export const publicationsList = [
     ],
     "journal": "International journal of pharmaceutics",
     "year": 2014,
-    "link": "https://doi.org/10.1016/j.ijpharm.2014.04.047"
+    "doi": "https://doi.org/10.1016/j.ijpharm.2014.04.047"
   },
   {
     "id": "p5",
@@ -63,7 +63,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 23 (2), 363-377, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.935531"
+    "doi": "https://doi.org/10.3109/10717544.2014.935531"
   },
   {
     "id": "p6",
@@ -73,7 +73,7 @@ export const publicationsList = [
     ],
     "journal": "CRC press, 2015",
     "year": 2015,
-    "link": "https://doi.org/10.1201/b19038-7"
+    "doi": "https://doi.org/10.1201/b19038-7"
   },
   {
     "id": "p7",
@@ -87,7 +87,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of drug targeting",
     "year": 2016,
-    "link": "https://doi.org/10.3109/1061186x.2015.1095922"
+    "doi": "https://doi.org/10.3109/1061186x.2015.1095922"
   },
   {
     "id": "p8",
@@ -99,7 +99,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 22 (8), 969-987, 2015",
     "year": 2015,
-    "link": "https://doi.org/10.3109/10717544.2013.879355"
+    "doi": "https://doi.org/10.3109/10717544.2013.879355"
   },
   {
     "id": "p9",
@@ -112,7 +112,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 23 (2), 550-563, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.928760"
+    "doi": "https://doi.org/10.3109/10717544.2014.928760"
   },
   {
     "id": "p10",
@@ -125,7 +125,7 @@ export const publicationsList = [
     ],
     "journal": "Biomedicine & Pharmacotherapy 112, 108601, 2019",
     "year": 2019,
-    "link": "https://doi.org/10.1016/j.biopha.2019.108601"
+    "doi": "https://doi.org/10.1016/j.biopha.2019.108601"
   },
   {
     "id": "p11",
@@ -138,7 +138,7 @@ export const publicationsList = [
     ],
     "journal": "The Thai Journal of Pharmaceutical Sciences",
     "year": 2010,
-    "link": "https://doi.org/10.56808/3027-7922.2170"
+    "doi": "https://doi.org/10.56808/3027-7922.2170"
   },
   {
     "id": "p12",
@@ -150,7 +150,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of drug targeting 23 (3), 202-221, 2015",
     "year": 2015,
-    "link": "https://doi.org/10.3109/1061186x.2014.992899"
+    "doi": "https://doi.org/10.3109/1061186x.2014.992899"
   },
   {
     "id": "p13",
@@ -165,7 +165,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial Cells, Blood Substitutes, and Biotechnology 38 (5), 230-249, 2010",
     "year": 2010,
-    "link": "https://doi.org/10.21236/ada435264"
+    "doi": "https://doi.org/10.21236/ada435264"
   },
   {
     "id": "p14",
@@ -180,7 +180,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery",
     "year": 2015,
-    "link": "https://doi.org/10.3109/10717544.2013.855277"
+    "doi": "https://doi.org/10.3109/10717544.2013.855277"
   },
   {
     "id": "p15",
@@ -193,7 +193,7 @@ export const publicationsList = [
     ],
     "journal": "European Journal of Pharmaceutical Sciences",
     "year": 2014,
-    "link": "https://doi.org/10.1016/j.ejps.2013.11.016"
+    "doi": "https://doi.org/10.1016/j.ejps.2013.11.016"
   },
   {
     "id": "p16",
@@ -207,7 +207,7 @@ export const publicationsList = [
     ],
     "journal": "Materials Science and Engineering: C",
     "year": 2016,
-    "link": "https://doi.org/10.1016/j.msec.2015.08.050"
+    "doi": "https://doi.org/10.1016/j.msec.2015.08.050"
   },
   {
     "id": "p17",
@@ -220,7 +220,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology 44 (4), 1167-1176, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2015.1012260"
+    "doi": "https://doi.org/10.3109/21691401.2015.1012260"
   },
   {
     "id": "p18",
@@ -234,7 +234,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.993486"
+    "doi": "https://doi.org/10.3109/10717544.2014.993486"
   },
   {
     "id": "p19",
@@ -248,7 +248,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of drug targeting 22 (10), 871-882, 2014",
     "year": 2014,
-    "link": "https://doi.org/10.3109/1061186x.2014.950664"
+    "doi": "https://doi.org/10.3109/1061186x.2014.950664"
   },
   {
     "id": "p20",
@@ -263,7 +263,7 @@ export const publicationsList = [
     ],
     "journal": "Heliyon 6 (8), 2020",
     "year": 2020,
-    "link": "https://doi.org/10.1016/j.heliyon.2020.e04663"
+    "doi": "https://doi.org/10.1016/j.heliyon.2020.e04663"
   },
   {
     "id": "p21",
@@ -276,7 +276,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology 44 (1), 135-143, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2014.927879"
+    "doi": "https://doi.org/10.3109/21691401.2014.927879"
   },
   {
     "id": "p22",
@@ -289,7 +289,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Drug Targeting 23 (2), 109-124, 2015",
     "year": 2015,
-    "link": "https://doi.org/10.3109/1061186x.2014.965715"
+    "doi": "https://doi.org/10.3109/1061186x.2014.965715"
   },
   {
     "id": "p23",
@@ -304,7 +304,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Materials Chemistry B",
     "year": 2013,
-    "link": "https://doi.org/10.1039/c3tb20487a"
+    "doi": "https://doi.org/10.1039/c3tb20487a"
   },
   {
     "id": "p24",
@@ -318,7 +318,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 23 (3), 717-728, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.935530"
+    "doi": "https://doi.org/10.3109/10717544.2014.935530"
   },
   {
     "id": "p25",
@@ -333,7 +333,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2015,
-    "link": "https://doi.org/10.3109/21691401.2014.885442"
+    "doi": "https://doi.org/10.3109/21691401.2014.885442"
   },
   {
     "id": "p26",
@@ -347,7 +347,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery",
     "year": 2015,
-    "link": "https://doi.org/10.3109/10717544.2014.894594"
+    "doi": "https://doi.org/10.3109/10717544.2014.894594"
   },
   {
     "id": "p27",
@@ -361,7 +361,7 @@ export const publicationsList = [
     ],
     "journal": "Nanomedicine: Nanotechnology, Biology and Medicine 40, 102494, 2022",
     "year": 2022,
-    "link": "https://doi.org/10.1016/j.nano.2021.102494"
+    "doi": "https://doi.org/10.1016/j.nano.2021.102494"
   },
   {
     "id": "p28",
@@ -379,7 +379,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of inorganic biochemistry 237, 111938, 2022",
     "year": 2022,
-    "link": "https://doi.org/10.2139/ssrn.4039890"
+    "doi": "https://doi.org/10.2139/ssrn.4039890"
   },
   {
     "id": "p29",
@@ -392,7 +392,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology 44 (4), 1177-1185, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2015.1012261"
+    "doi": "https://doi.org/10.3109/21691401.2015.1012261"
   },
   {
     "id": "p30",
@@ -405,7 +405,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 31 (1), 2014",
     "year": 2014,
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014008285"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014008285"
   },
   {
     "id": "p31",
@@ -417,7 +417,7 @@ export const publicationsList = [
     ],
     "journal": "Materials Science and Engineering: C",
     "year": 2017,
-    "link": "https://doi.org/10.1016/j.msec.2017.02.013"
+    "doi": "https://doi.org/10.1016/j.msec.2017.02.013"
   },
   {
     "id": "p32",
@@ -429,7 +429,7 @@ export const publicationsList = [
     ],
     "journal": "Tropical Journal of Pharmaceutical Research",
     "year": 2010,
-    "link": "https://doi.org/10.4314/tjpr.v9i5.61061"
+    "doi": "https://doi.org/10.4314/tjpr.v9i5.61061"
   },
   {
     "id": "p33",
@@ -441,7 +441,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2015.1008508"
+    "doi": "https://doi.org/10.3109/21691401.2015.1008508"
   },
   {
     "id": "p34",
@@ -454,7 +454,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 23 (7), 2497-2512, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2015.1019653"
+    "doi": "https://doi.org/10.3109/10717544.2015.1019653"
   },
   {
     "id": "p35",
@@ -467,7 +467,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of drug targeting 23 (10), 865-887, 2015",
     "year": 2015,
-    "link": "https://doi.org/10.3109/1061186x.2015.1029930"
+    "doi": "https://doi.org/10.3109/1061186x.2015.1029930"
   },
   {
     "id": "p36",
@@ -480,7 +480,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial Cells, Nanomedicine, and Biotechnology",
     "year": 2014,
-    "link": "https://doi.org/10.3109/21691401.2013.837474"
+    "doi": "https://doi.org/10.3109/21691401.2013.837474"
   },
   {
     "id": "p37",
@@ -495,7 +495,7 @@ export const publicationsList = [
     ],
     "journal": "European Journal of Pharmaceutical Sciences",
     "year": 2017,
-    "link": "https://doi.org/10.1016/j.ejps.2016.10.011"
+    "doi": "https://doi.org/10.1016/j.ejps.2016.10.011"
   },
   {
     "id": "p38",
@@ -510,7 +510,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of drug targeting",
     "year": 2015,
-    "link": "https://doi.org/10.3109/1061186x.2014.994097"
+    "doi": "https://doi.org/10.3109/1061186x.2014.994097"
   },
   {
     "id": "p39",
@@ -527,7 +527,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Biomaterials Science, Polymer Edition 34 (7), 986-1017, 2023",
     "year": 2023,
-    "link": "https://doi.org/10.1080/09205063.2022.2155778"
+    "doi": "https://doi.org/10.1080/09205063.2022.2155778"
   },
   {
     "id": "p40",
@@ -540,7 +540,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2014.966194"
+    "doi": "https://doi.org/10.3109/21691401.2014.966194"
   },
   {
     "id": "p41",
@@ -553,7 +553,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 23 (5), 1676-1698, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2015.1074765"
+    "doi": "https://doi.org/10.3109/10717544.2015.1074765"
   },
   {
     "id": "p42",
@@ -567,7 +567,7 @@ export const publicationsList = [
     ],
     "journal": "Aaps Pharmscitech 22 (1), 47, 2021",
     "year": 2021,
-    "link": "https://doi.org/10.1208/s12249-020-01908-5"
+    "doi": "https://doi.org/10.1208/s12249-020-01908-5"
   },
   {
     "id": "p43",
@@ -580,7 +580,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 23 (5), 1636-1644, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2016.1155243"
+    "doi": "https://doi.org/10.3109/10717544.2016.1155243"
   },
   {
     "id": "p44",
@@ -596,7 +596,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 31 (3), 2014",
     "year": 2014,
-    "link": "https://doi.org/10.2174/1872210512666181017122032"
+    "doi": "https://doi.org/10.2174/1872210512666181017122032"
   },
   {
     "id": "p45",
@@ -611,7 +611,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of drug targeting",
     "year": 2012,
-    "link": "https://doi.org/10.3109/1061186x.2011.611516"
+    "doi": "https://doi.org/10.3109/1061186x.2011.611516"
   },
   {
     "id": "p46",
@@ -624,7 +624,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 31 (2), 2014",
     "year": 2014,
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014008117"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014008117"
   },
   {
     "id": "p47",
@@ -637,7 +637,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery 23 (5), 1645-1661, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.945018"
+    "doi": "https://doi.org/10.3109/10717544.2014.945018"
   },
   {
     "id": "p48",
@@ -650,7 +650,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology 44 (1), 216-225, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2014.937868"
+    "doi": "https://doi.org/10.3109/21691401.2014.937868"
   },
   {
     "id": "p49",
@@ -664,7 +664,7 @@ export const publicationsList = [
     ],
     "journal": "Pharmaceutical development and technology 25 (7), 797-814, 2020",
     "year": 2020,
-    "link": "https://doi.org/10.1080/10837450.2020.1753771"
+    "doi": "https://doi.org/10.1080/10837450.2020.1753771"
   },
   {
     "id": "p50",
@@ -674,7 +674,7 @@ export const publicationsList = [
     ],
     "journal": "Academic Press, 2020",
     "year": 2020,
-    "link": "https://doi.org/10.1016/b978-0-12-819838-4.00001-8"
+    "doi": "https://doi.org/10.1016/b978-0-12-819838-4.00001-8"
   },
   {
     "id": "p51",
@@ -687,7 +687,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2015.1052472"
+    "doi": "https://doi.org/10.3109/21691401.2015.1052472"
   },
   {
     "id": "p52",
@@ -700,7 +700,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial Cells, Blood Substitutes, and Biotechnology 40 (1-2), 75-96, 2012",
     "year": 2012,
-    "link": "https://doi.org/10.1007/978-1-4419-9745-6_15"
+    "doi": "https://doi.org/10.1007/978-1-4419-9745-6_15"
   },
   {
     "id": "p53",
@@ -712,7 +712,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Drug Delivery Science and Technology 43, 379-387, 2018",
     "year": 2018,
-    "link": "https://doi.org/10.1016/j.jddst.2017.11.008"
+    "doi": "https://doi.org/10.1016/j.jddst.2017.11.008"
   },
   {
     "id": "p54",
@@ -728,7 +728,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.920428"
+    "doi": "https://doi.org/10.3109/10717544.2014.920428"
   },
   {
     "id": "p55",
@@ -742,7 +742,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery letters",
     "year": 2014,
-    "link": "https://doi.org/10.2174/22103031113036660018"
+    "doi": "https://doi.org/10.2174/22103031113036660018"
   },
   {
     "id": "p56",
@@ -757,7 +757,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2014.930747"
+    "doi": "https://doi.org/10.3109/21691401.2014.930747"
   },
   {
     "id": "p57",
@@ -771,7 +771,7 @@ export const publicationsList = [
     ],
     "journal": "International journal of pharmaceutics",
     "year": 2015,
-    "link": "https://doi.org/10.1016/j.ijpharm.2015.02.070"
+    "doi": "https://doi.org/10.1016/j.ijpharm.2015.02.070"
   },
   {
     "id": "p58",
@@ -784,7 +784,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 31 (6), 2014",
     "year": 2014,
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014011104"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014011104"
   },
   {
     "id": "p59",
@@ -798,7 +798,7 @@ export const publicationsList = [
     ],
     "journal": "Scientia pharmaceutica",
     "year": 2009,
-    "link": "https://doi.org/10.3797/scipharm.0908-09"
+    "doi": "https://doi.org/10.3797/scipharm.0908-09"
   },
   {
     "id": "p60",
@@ -812,7 +812,7 @@ export const publicationsList = [
     ],
     "journal": "European Journal of Pharmaceutical Sciences",
     "year": 2015,
-    "link": "https://doi.org/10.1016/j.ejps.2015.01.012"
+    "doi": "https://doi.org/10.1016/j.ejps.2015.01.012"
   },
   {
     "id": "p61",
@@ -825,7 +825,7 @@ export const publicationsList = [
     ],
     "journal": "Drug Delivery",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.963900"
+    "doi": "https://doi.org/10.3109/10717544.2014.963900"
   },
   {
     "id": "p62",
@@ -840,7 +840,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2018,
-    "link": "https://doi.org/10.1080/21691401.2017.1414054"
+    "doi": "https://doi.org/10.1080/21691401.2017.1414054"
   },
   {
     "id": "p63",
@@ -853,7 +853,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2014.924007"
+    "doi": "https://doi.org/10.3109/21691401.2014.924007"
   },
   {
     "id": "p64",
@@ -867,7 +867,7 @@ export const publicationsList = [
     ],
     "journal": "Molecular pharmaceutics",
     "year": 2015,
-    "link": "https://doi.org/10.1021/acs.molpharmaceut.5b00016"
+    "doi": "https://doi.org/10.1021/acs.molpharmaceut.5b00016"
   },
   {
     "id": "p65",
@@ -881,7 +881,7 @@ export const publicationsList = [
     ],
     "journal": "Drug delivery",
     "year": 2016,
-    "link": "https://doi.org/10.3109/10717544.2014.977460"
+    "doi": "https://doi.org/10.3109/10717544.2014.977460"
   },
   {
     "id": "p66",
@@ -894,7 +894,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 33 (1), 2016",
     "year": 2016,
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.v33.i1.20"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.v33.i1.20"
   },
   {
     "id": "p67",
@@ -907,7 +907,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Pharmaceutics 2014 (1), 352425, 2014",
     "year": 2014,
-    "link": "https://doi.org/10.1136/sti.2008.031328"
+    "doi": "https://doi.org/10.1136/sti.2008.031328"
   },
   {
     "id": "p68",
@@ -920,7 +920,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2014.966195"
+    "doi": "https://doi.org/10.3109/21691401.2014.966195"
   },
   {
     "id": "p69",
@@ -932,7 +932,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 32 (2), 2015",
     "year": 2015,
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2015010159"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2015010159"
   },
   {
     "id": "p70",
@@ -945,7 +945,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Drug Targeting 22 (10), 859-870, 2014",
     "year": 2014,
-    "link": "https://doi.org/10.3109/1061186x.2014.947295"
+    "doi": "https://doi.org/10.3109/1061186x.2014.947295"
   },
   {
     "id": "p71",
@@ -958,7 +958,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial Cells, Nanomedicine, and Biotechnology 46 (sup2), 539-551, 2018",
     "year": 2018,
-    "link": "https://doi.org/10.1080/21691401.2018.1463230"
+    "doi": "https://doi.org/10.1080/21691401.2018.1463230"
   },
   {
     "id": "p72",
@@ -970,7 +970,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 31 (4), 2014",
     "year": 2014,
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014010122"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014010122"
   },
   {
     "id": "p73",
@@ -983,7 +983,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 31 (5), 2014",
     "year": 2014,
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014010123"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014010123"
   },
   {
     "id": "p74",
@@ -995,7 +995,7 @@ export const publicationsList = [
     ],
     "journal": "Current Nanoscience",
     "year": 2011,
-    "link": "https://doi.org/10.1016/b978-0-12-810391-3.00007-2"
+    "doi": "https://doi.org/10.1016/b978-0-12-810391-3.00007-2"
   },
   {
     "id": "p75",
@@ -1010,7 +1010,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Drug Delivery Science and Technology",
     "year": 2020,
-    "link": "https://doi.org/10.1016/j.jddst.2020.101502"
+    "doi": "https://doi.org/10.1016/j.jddst.2020.101502"
   },
   {
     "id": "p76",
@@ -1023,7 +1023,7 @@ export const publicationsList = [
     ],
     "journal": "Current eye research",
     "year": 2019,
-    "link": "https://doi.org/10.1080/02713683.2018.1563196"
+    "doi": "https://doi.org/10.1080/02713683.2018.1563196"
   },
   {
     "id": "p77",
@@ -1036,7 +1036,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial Cells, Nanomedicine, and Biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2014.1000492"
+    "doi": "https://doi.org/10.3109/21691401.2014.1000492"
   },
   {
     "id": "p78",
@@ -1049,7 +1049,7 @@ export const publicationsList = [
     ],
     "journal": "Critical Reviews™ in Therapeutic Drug Carrier Systems 32 (5), 2015",
     "year": 2015,
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2015011645"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2015011645"
   },
   {
     "id": "p79",
@@ -1061,7 +1061,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial Cells, Blood Substitutes, and Biotechnology",
     "year": 2011,
-    "link": "https://doi.org/10.3109/10731199.2010.494580"
+    "doi": "https://doi.org/10.3109/10731199.2010.494580"
   },
   {
     "id": "p80",
@@ -1074,7 +1074,7 @@ export const publicationsList = [
     ],
     "journal": "Current Drug Delivery",
     "year": 2015,
-    "link": "https://doi.org/10.2174/1567201812666141205131331"
+    "doi": "https://doi.org/10.2174/1567201812666141205131331"
   },
   {
     "id": "p81",
@@ -1088,7 +1088,7 @@ export const publicationsList = [
     ],
     "journal": "Aaps Pharmscitech 22 (5), 164, 2021",
     "year": 2021,
-    "link": "https://doi.org/10.1208/s12249-021-02057-z"
+    "doi": "https://doi.org/10.1208/s12249-021-02057-z"
   },
   {
     "id": "p82",
@@ -1099,7 +1099,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Cosmetic and Laser Therapy",
     "year": 2019,
-    "link": "https://doi.org/10.1080/14764172.2019.1658878"
+    "doi": "https://doi.org/10.1080/14764172.2019.1658878"
   },
   {
     "id": "p83",
@@ -1112,7 +1112,7 @@ export const publicationsList = [
     ],
     "journal": "Current drug delivery 15 (2), 155-166, 2018",
     "year": 2018,
-    "link": "https://doi.org/10.2174/1567201814666171002115230"
+    "doi": "https://doi.org/10.2174/1567201814666171002115230"
   },
   {
     "id": "p84",
@@ -1124,7 +1124,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology 44 (6), 1374-1382, 2016",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2015.1037885"
+    "doi": "https://doi.org/10.3109/21691401.2015.1037885"
   },
   {
     "id": "p85",
@@ -1137,7 +1137,7 @@ export const publicationsList = [
     ],
     "journal": "Artificial cells, nanomedicine, and biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.3109/21691401.2014.984303"
+    "doi": "https://doi.org/10.3109/21691401.2014.984303"
   },
   {
     "id": "p86",
@@ -1150,7 +1150,7 @@ export const publicationsList = [
     ],
     "journal": "Applications of Targeted Nano Drugs and Delivery Systems, 15-33, 2019",
     "year": 2019,
-    "link": "https://doi.org/10.1016/b978-0-12-814029-1.00002-8"
+    "doi": "https://doi.org/10.1016/b978-0-12-814029-1.00002-8"
   },
   {
     "id": "p87",
@@ -1165,7 +1165,7 @@ export const publicationsList = [
     ],
     "journal": "European Journal of Pharmaceutical Sciences",
     "year": 2014,
-    "link": "https://doi.org/10.1016/j.ejps.2014.09.019"
+    "doi": "https://doi.org/10.1016/j.ejps.2014.09.019"
   },
   {
     "id": "p88",
@@ -1177,7 +1177,7 @@ export const publicationsList = [
     ],
     "journal": "International journal of biological macromolecules 118, 289-295, 2018",
     "year": 2018,
-    "link": "https://doi.org/10.1016/j.ijbiomac.2018.06.084"
+    "doi": "https://doi.org/10.1016/j.ijbiomac.2018.06.084"
   },
   {
     "id": "p89",
@@ -1189,7 +1189,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Pharmaceutical Sciences",
     "year": 2018,
-    "link": "https://doi.org/10.1016/j.xphs.2018.06.014"
+    "doi": "https://doi.org/10.1016/j.xphs.2018.06.014"
   },
   {
     "id": "p90",
@@ -1204,7 +1204,7 @@ export const publicationsList = [
     ],
     "journal": "Current drug delivery",
     "year": 2016,
-    "link": "https://doi.org/10.2174/1567201813666151231093605"
+    "doi": "https://doi.org/10.2174/1567201813666151231093605"
   },
   {
     "id": "p288",
@@ -1216,7 +1216,7 @@ export const publicationsList = [
     ],
     "journal": "Academic Press, 2025",
     "year": 2025,
-    "link": "https://doi.org/10.1016/b978-0-443-27745-0.00009-0"
+    "doi": "https://doi.org/10.1016/b978-0-443-27745-0.00009-0"
   },
   {
     "id": "p289",
@@ -1236,7 +1236,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Cereal Science",
     "year": 2025,
-    "link": "https://doi.org/10.1016/j.jcs.2025.104306"
+    "doi": "https://doi.org/10.1016/j.jcs.2025.104306"
   },
   {
     "id": "p290",
@@ -1262,7 +1262,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Drug Delivery Science and Technology",
     "year": 2025,
-    "link": "https://doi.org/10.1016/j.jddst.2025.107228"
+    "doi": "https://doi.org/10.1016/j.jddst.2025.107228"
   },
   {
     "id": "p291",
@@ -1276,7 +1276,7 @@ export const publicationsList = [
     ],
     "journal": "Stem Cell Therapy in Dermatological Disorders, 19-41, 2025",
     "year": 2025,
-    "link": "https://doi.org/10.1002/9781394393145.ch2"
+    "doi": "https://doi.org/10.1002/9781394393145.ch2"
   },
   {
     "id": "p292",
@@ -1300,7 +1300,7 @@ export const publicationsList = [
     ],
     "journal": "South African Journal of Botany",
     "year": 2025,
-    "link": "https://doi.org/10.1016/j.sajb.2025.07.016"
+    "doi": "https://doi.org/10.1016/j.sajb.2025.07.016"
   },
   {
     "id": "p293",
@@ -1322,7 +1322,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Ethnopharmacology",
     "year": 2025,
-    "link": "https://doi.org/10.1016/j.jep.2025.120489"
+    "doi": "https://doi.org/10.1016/j.jep.2025.120489"
   },
   {
     "id": "p294",
@@ -1345,7 +1345,7 @@ export const publicationsList = [
     ],
     "journal": "ChemistrySelect",
     "year": 2025,
-    "link": "https://doi.org/10.1002/slct.202405635"
+    "doi": "https://doi.org/10.1002/slct.202405635"
   },
   {
     "id": "p295",
@@ -1361,7 +1361,7 @@ export const publicationsList = [
     ],
     "journal": "Nutrire",
     "year": 2025,
-    "link": "https://doi.org/10.1186/s41110-025-00363-1"
+    "doi": "https://doi.org/10.1186/s41110-025-00363-1"
   },
   {
     "id": "p296",
@@ -1387,7 +1387,7 @@ export const publicationsList = [
     ],
     "journal": "ChemistrySelect",
     "year": 2025,
-    "link": "https://doi.org/10.1002/slct.202501137"
+    "doi": "https://doi.org/10.1002/slct.202501137"
   },
   {
     "id": "p297",
@@ -1407,7 +1407,7 @@ export const publicationsList = [
     ],
     "journal": "ChemistrySelect",
     "year": 2025,
-    "link": "https://doi.org/10.1002/slct.202501105"
+    "doi": "https://doi.org/10.1002/slct.202501105"
   },
   {
     "id": "p298",
@@ -1422,7 +1422,7 @@ export const publicationsList = [
     ],
     "journal": "CRC Press, 2025",
     "year": 2025,
-    "link": "https://doi.org/10.1201/9780367694265-eppmpt4-0"
+    "doi": "https://doi.org/10.1201/9780367694265-eppmpt4-0"
   },
   {
     "id": "p299",
@@ -1432,7 +1432,7 @@ export const publicationsList = [
     ],
     "journal": "Queen Mary University of London, 2025",
     "year": 2025,
-    "link": "https://doi.org/10.1021/acsami.3c02741.s001"
+    "doi": "https://doi.org/10.1021/acsami.3c02741.s001"
   },
   {
     "id": "p300",
@@ -1456,7 +1456,7 @@ export const publicationsList = [
     ],
     "journal": "Current Pharmaceutical Design, 2025",
     "year": 2025,
-    "link": "https://doi.org/10.2174/0113816128433361251009063909"
+    "doi": "https://doi.org/10.2174/0113816128433361251009063909"
   },
   {
     "id": "p301",
@@ -1473,7 +1473,7 @@ export const publicationsList = [
     ],
     "journal": "Central Nervous System Agents in Medicinal Chemistry, 2025",
     "year": 2025,
-    "link": "https://doi.org/10.1007/978-981-97-9290-0_8"
+    "doi": "https://doi.org/10.1007/978-981-97-9290-0_8"
   },
   {
     "id": "p302",
@@ -1488,7 +1488,7 @@ export const publicationsList = [
     ],
     "journal": "Emerging Paradigms in Delivery Systems for Antitubercular Therapy, 159-175, 2025",
     "year": 2025,
-    "link": "https://doi.org/10.1016/b978-0-443-24035-5.00007-4"
+    "doi": "https://doi.org/10.1016/b978-0-443-24035-5.00007-4"
   },
   {
     "id": "p303",
@@ -1502,7 +1502,7 @@ export const publicationsList = [
     ],
     "journal": "Applied Biotechnology and Bioinformatics: Agriculture, Pharmaceutical Research and Environment",
     "year": 2024,
-    "link": "https://doi.org/10.5772/intechopen.1014016"
+    "doi": "https://doi.org/10.5772/intechopen.1014016"
   },
   {
     "id": "p304",
@@ -1517,7 +1517,7 @@ export const publicationsList = [
     ],
     "journal": "Letters in Drug Design & Discovery",
     "year": 2024,
-    "link": "https://doi.org/10.2174/0115701808304505240628103332"
+    "doi": "https://doi.org/10.2174/0115701808304505240628103332"
   },
   {
     "id": "p305",
@@ -1542,7 +1542,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Pharmaceutical Innovation",
     "year": 2024,
-    "link": "https://doi.org/10.1007/s12247-024-09875-1"
+    "doi": "https://doi.org/10.1007/s12247-024-09875-1"
   },
   {
     "id": "p306",
@@ -1559,7 +1559,7 @@ export const publicationsList = [
     ],
     "journal": "Current Bioactive Compounds",
     "year": 2024,
-    "link": "https://doi.org/10.2174/0115734072294929240206060527"
+    "doi": "https://doi.org/10.2174/0115734072294929240206060527"
   },
   {
     "id": "p307",
@@ -1583,7 +1583,7 @@ export const publicationsList = [
     ],
     "journal": "AAPS PharmSciTech",
     "year": 2024,
-    "link": "https://doi.org/10.1208/s12249-024-02915-6"
+    "doi": "https://doi.org/10.1208/s12249-024-02915-6"
   },
   {
     "id": "p308",
@@ -1607,7 +1607,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": 2024,
-    "link": "https://doi.org/10.21203/rs.3.rs-4224044/v1"
+    "doi": "https://doi.org/10.21203/rs.3.rs-4224044/v1"
   },
   {
     "id": "p309",
@@ -1622,7 +1622,7 @@ export const publicationsList = [
     ],
     "journal": "ASSAY and Drug Development Technologies",
     "year": 2024,
-    "link": "https://doi.org/10.1089/adt.2023.087"
+    "doi": "https://doi.org/10.1089/adt.2023.087"
   },
   {
     "id": "p310",
@@ -1639,7 +1639,7 @@ export const publicationsList = [
     ],
     "journal": "Synbiotics for the Management of Cancer, 257-267, 2023",
     "year": 2023,
-    "link": "https://doi.org/10.1007/978-981-19-7550-9_12"
+    "doi": "https://doi.org/10.1007/978-981-19-7550-9_12"
   },
   {
     "id": "p311",
@@ -1653,7 +1653,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": 2023,
-    "link": "https://doi.org/10.1002/app.54312"
+    "doi": "https://doi.org/10.1002/app.54312"
   },
   {
     "id": "p312",
@@ -1669,7 +1669,7 @@ export const publicationsList = [
     ],
     "journal": "Current Bioactive Compounds",
     "year": 2021,
-    "link": "https://doi.org/10.2174/1573407217666210223092824"
+    "doi": "https://doi.org/10.2174/1573407217666210223092824"
   },
   {
     "id": "p313",
@@ -1683,7 +1683,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Pain Management 14 (3), 2021",
     "year": 2021,
-    "link": "https://doi.org/10.71097/ijsat.v16.i3.7928"
+    "doi": "https://doi.org/10.71097/ijsat.v16.i3.7928"
   },
   {
     "id": "p314",
@@ -1697,7 +1697,7 @@ export const publicationsList = [
     ],
     "journal": "NanoBioEngineering, 219-233, 2018",
     "year": 2018,
-    "link": "https://doi.org/10.1201/9781351138901-10"
+    "doi": "https://doi.org/10.1201/9781351138901-10"
   },
   {
     "id": "p315",
@@ -1709,7 +1709,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": 2016,
-    "link": "https://doi.org/10.23880/pdraj-16000113"
+    "doi": "https://doi.org/10.23880/pdraj-16000113"
   },
   {
     "id": "p316",
@@ -1722,7 +1722,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Colloid Science and Biotechnology",
     "year": 2016,
-    "link": "https://doi.org/10.1166/jcsb.2016.1137"
+    "doi": "https://doi.org/10.1166/jcsb.2016.1137"
   },
   {
     "id": "p317",
@@ -1735,7 +1735,7 @@ export const publicationsList = [
     ],
     "journal": "J Drug Target",
     "year": 2016,
-    "link": "https://doi.org/10.3109/1061186x.2015.1095922"
+    "doi": "https://doi.org/10.3109/1061186x.2015.1095922"
   },
   {
     "id": "p318",
@@ -1748,7 +1748,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": 2016,
-    "link": "https://doi.org/10.1016/j.provac.2009.07.027"
+    "doi": "https://doi.org/10.1016/j.provac.2009.07.027"
   },
   {
     "id": "p319",
@@ -1761,7 +1761,7 @@ export const publicationsList = [
     ],
     "journal": "Journal of Colloid Science and Biotechnology",
     "year": 2015,
-    "link": "https://doi.org/10.1166/jcsb.2015.1114"
+    "doi": "https://doi.org/10.1166/jcsb.2015.1114"
   },
   {
     "id": "p320",
@@ -1775,7 +1775,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": 2015,
-    "link": "https://doi.org/10.1016/j.ejps.2015.01.012"
+    "doi": "https://doi.org/10.1016/j.ejps.2015.01.012"
   },
   {
     "id": "p321",
@@ -1787,7 +1787,7 @@ export const publicationsList = [
     ],
     "journal": "Handbook of Functional Nanomaterials, 525-548, 2013",
     "year": 2013,
-    "link": "https://doi.org/10.1002/9781119857792.ch5"
+    "doi": "https://doi.org/10.1002/9781119857792.ch5"
   },
   {
     "id": "p322",
@@ -1805,7 +1805,7 @@ export const publicationsList = [
     ],
     "journal": "Current cancer drug targets",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.2174/0115680096451740260311114647"
+    "doi": "https://doi.org/10.2174/0115680096451740260311114647"
   },
   {
     "id": "p323",
@@ -1822,7 +1822,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.14719/pst.9871"
+    "doi": "https://doi.org/10.14719/pst.9871"
   },
   {
     "id": "p324",
@@ -1838,7 +1838,7 @@ export const publicationsList = [
     ],
     "journal": "Gastrointestinal Inflammations and Gut Microbiota, 280-291, 0",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.1201/9781003493143-16"
+    "doi": "https://doi.org/10.1201/9781003493143-16"
   },
   {
     "id": "p325",
@@ -1854,7 +1854,7 @@ export const publicationsList = [
     ],
     "journal": "CRC Press, 0",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.1201/9780367694265-eppmpt29-0"
+    "doi": "https://doi.org/10.1201/9780367694265-eppmpt29-0"
   },
   {
     "id": "p326",
@@ -1865,7 +1865,7 @@ export const publicationsList = [
     ],
     "journal": "Begel House Inc, 0",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2023048197"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2023048197"
   },
   {
     "id": "p327",
@@ -1875,7 +1875,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.1002/app.54312"
+    "doi": "https://doi.org/10.1002/app.54312"
   },
   {
     "id": "p328",
@@ -1889,7 +1889,7 @@ export const publicationsList = [
     ],
     "journal": "European Journal of Molecular & Clinical Medicine",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.2991/idcsu-17.2018.9"
+    "doi": "https://doi.org/10.2991/idcsu-17.2018.9"
   },
   {
     "id": "p329",
@@ -1932,7 +1932,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.2310/pm.4347"
+    "doi": "https://doi.org/10.2310/pm.4347"
   },
   {
     "id": "p330",
@@ -1944,7 +1944,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014010123"
+    "doi": "https://doi.org/10.1615/critrevtherdrugcarriersyst.2014010123"
   },
   {
     "id": "p331",
@@ -1955,7 +1955,7 @@ export const publicationsList = [
     ],
     "journal": "",
     "year": "Unknown Year",
-    "link": "https://doi.org/10.1201/b12223-5"
+    "doi": "https://doi.org/10.1201/b12223-5"
   }
 ];
 

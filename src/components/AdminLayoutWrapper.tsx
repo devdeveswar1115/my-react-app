@@ -29,6 +29,7 @@ export default function AdminLayoutWrapper({ children }: { children: React.React
   const navItems = [
     { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
     { label: 'Founders', href: '/admin/founders', icon: Users },
+    { label: 'Leaders Voice', href: '/admin/leaders', icon: Users },
     { label: 'Faculty', href: '/admin/faculty', icon: Users },
     { label: 'Students', href: '/admin/students', icon: GraduationCap },
     { label: 'Lab Technicians', href: '/admin/technicians', icon: Users },
@@ -38,6 +39,7 @@ export default function AdminLayoutWrapper({ children }: { children: React.React
     { href: '/admin/mou', label: 'MOUs', icon: Briefcase },
     { href: '/admin/collaborations', label: 'Collaborations', icon: Users },
     { href: '/admin/events', label: 'Events', icon: Calendar },
+    { href: '/admin/news', label: 'News & Notices', icon: Calendar },
     { href: '/admin/equipment', label: 'Equipment', icon: Microscope },
     { href: '/admin/services', label: 'Services', icon: Database },
     { href: '/admin/migrate', label: 'Migration Tool', icon: Database },

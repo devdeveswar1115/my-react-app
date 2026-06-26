@@ -18,6 +18,7 @@ export default function FacultyPage() {
   const [image, setImage] = useState('');
   const [researchAreas, setResearchAreas] = useState('');
   const [bio, setBio] = useState('');
+  const [googleScholarUrl, setGoogleScholarUrl] = useState('');
 
   const fetchFaculty = async () => {
     setLoading(true);
@@ -38,6 +39,7 @@ export default function FacultyPage() {
     setImage('');
     setResearchAreas('');
     setBio('');
+    setGoogleScholarUrl('');
     setCurrentEditId(null);
   };
 
@@ -49,6 +51,7 @@ export default function FacultyPage() {
       setImage(fac.image || '');
       setResearchAreas(fac.researchAreas || '');
       setBio(fac.bio || '');
+      setGoogleScholarUrl(fac.googleScholarUrl || fac.googleScholarId || '');
       setCurrentEditId(fac.id);
     } else {
       resetForm();
@@ -63,7 +66,7 @@ export default function FacultyPage() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = { name, designation, email, image, researchAreas, bio };
+    const data = { name, designation, email, image, researchAreas, bio, googleScholarUrl };
 
     if (currentEditId) {
       await updateDocument('faculty', currentEditId, data);
@@ -140,6 +143,10 @@ export default function FacultyPage() {
               <div className={styles.formGroup}>
                 <label>Email</label>
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
+              </div>
+              <div className={styles.formGroup}>
+                <label>Google Scholar Link</label>
+                <input value={googleScholarUrl} onChange={e => setGoogleScholarUrl(e.target.value)} placeholder="https://scholar.google.com/citations?user=..." />
               </div>
               <div className={styles.formGroup}>
                 <label>Image</label>

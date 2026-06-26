@@ -9,6 +9,7 @@ export default function ServicesPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     service: "",
     category: "",
     message: ""
@@ -42,7 +43,7 @@ export default function ServicesPage() {
       
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: "", email: "", service: "", category: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", service: "", category: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         alert("Oops! There was a problem submitting your form.");
@@ -63,7 +64,8 @@ export default function ServicesPage() {
     <div className="section container">
       <h1 className="section-title">Testing & Analysis Services</h1>
       <p className="section-subtitle">
-        We offer our state-of-the-art facilities for external academic and industrial testing.
+        We offer our state-of-the-art facilities for external academic and industrial testing.<br/>
+        <strong>For urgent inquiries, call us at:</strong> +91 98882 06383
       </p>
 
       <div className={styles.servicesLayout}>
@@ -144,6 +146,18 @@ export default function ServicesPage() {
                 className="form-input"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="form-label" htmlFor="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                required
+                className="form-input"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
             </div>
 

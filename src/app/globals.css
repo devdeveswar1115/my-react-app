@@ -1,26 +1,21 @@
 :root {
-  /* Colors - H-N Laboratory Theme */
+  /* Colors - H-N Laboratory Theme (Green, Blue, Red) */
   --primary: #15b94c;
-  /* Vibrant Green from 'H' and Leaf */
   --primary-hover: #10963d;
-  /* Darker Green */
   --secondary: #0a81cd;
-  /* Vibrant Blue from 'N' and Pill */
-  --accent: #ffbc00;
-  /* Yellow from 'LABORATORY' */
+  --accent: #ef4444;
   --background: #f8fafc;
-  /* Very Light Blue-Slate */
   --surface: #ffffff;
-  /* White */
   --text-main: #1e3a8a;
-  /* Dark Navy Blue from Border */
   --text-muted: #475569;
-  /* Slate Gray */
   --border: #bfdbfe;
-  /* Light Blue Border */
+
+  /* Hero Gradient */
+  --hero-gradient-start: rgba(21, 185, 76, 0.75);
+  --hero-gradient-end: rgba(10, 129, 205, 0.7);
 
   /* Layout */
-  --max-width: 1200px;
+  --max-width: 1536px;
   --header-height: 70px;
   --radius: 8px;
 
@@ -28,17 +23,20 @@
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-
 .dark {
   --primary: #22c55e;
   --primary-hover: #4ade80;
   --secondary: #38bdf8;
-  --accent: #fde047;
+  --accent: #f87171;
   --background: #0f172a;
   --surface: #1e293b;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --border: #334155;
+
+  /* Dark Mode Hero Gradient - Dark / Black graphic overlay */
+  --hero-gradient-start: rgba(15, 23, 42, 0.85);
+  --hero-gradient-end: rgba(10, 15, 25, 0.9);
 }
 
 * {

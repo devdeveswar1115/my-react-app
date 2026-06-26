@@ -220,7 +220,8 @@ export default function MigratePage() {
             year: p.year,
             abstract: '',
             image: '',
-            pdfLink: p.link || ''
+            pdfLink: p.link || '',
+            doi: (p as any).doi || ''
           });
           addLog(`✅ Successfully migrated publication: ${p.title}`);
           s++;

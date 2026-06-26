@@ -1,5 +1,5 @@
 .hero {
-  background: linear-gradient(135deg, rgba(21, 185, 76, 0.95) 0%, rgba(10, 129, 205, 0.9) 100%), url('/hero-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%), url('/hero-bg.jpg') center/cover no-repeat;
   color: white;
   padding: 10rem 0 8rem;
   text-align: center;
@@ -201,4 +201,217 @@
   .heroTitle {
     font-size: 2.5rem;
   }
+}
+
+/* Home Split Layout */
+.homeSplitLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .homeSplitLayout {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.homeSplitLeft {
+  width: 100%;
+}
+
+.homeSplitRight {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.newsContainer {
+  background-color: var(--bg-alt);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.newsHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.newsIconWrapper {
+  background-color: var(--surface);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+.newsTitleText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.newsHeaderLine {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--primary);
+  opacity: 0.5;
+}
+
+.newsListContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.newsItem {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+}
+
+.newsItem:last-child {
+  border-bottom: none;
+}
+
+.newsItem:hover {
+  color: var(--primary);
+}
+
+/* Stats Box */
+.statsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.statBox {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1.5rem 3rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.marqueeContent {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.marqueeContent:hover {
+  animation-play-state: paused;
+}
+
+.marqueeContent a {
+  color: var(--text-main);
+  margin-right: 4rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.marqueeContent a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* News Grid */
+.newsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.newsCard {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.newsCard:hover {
+  transform: translateY(-5px);
+}
+
+.newsImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.newsContent {
+  padding: 1.5rem;
+}
+
+.newsContent h3 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.newsContent p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.newsLink {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
 }
