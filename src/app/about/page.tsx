@@ -1,7 +1,7 @@
 "use client";
 
 import { labData } from "@/data/lab";
-import { Microscope, Award, Users } from "lucide-react";
+import { Microscope, Award, Users, Trophy } from "lucide-react";
 import Link from "next/link";
 import styles from "../page.module.css";
 
@@ -54,6 +54,16 @@ export default function AboutPage() {
               <div>
                 <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>State-of-the-Art Equipment</h3>
                 <p style={{ color: 'var(--text-muted)' }}>Explore our world-class analytical and formulation development facilities.</p>
+              </div>
+            </Link>
+
+            <Link href="/achievements" style={{ textDecoration: 'none', display: 'flex', alignItems: 'flex-start', gap: '1rem', color: 'inherit' }} className="about-link">
+              <div style={{ backgroundColor: 'var(--bg-alt)', padding: '1rem', borderRadius: '50%', color: 'var(--primary)', transition: 'background-color 0.2s' }}>
+                <Trophy size={24} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>Achievements</h3>
+                <p style={{ color: 'var(--text-muted)' }}>Discover the milestones, awards, and recognitions earned by our team.</p>
               </div>
             </Link>
           </div>

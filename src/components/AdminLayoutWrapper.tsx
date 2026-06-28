@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { useRouter } from 'next/navigation';
-import { Users, GraduationCap, BookOpen, Briefcase, Calendar, Database, LogOut, Menu, X, LayoutDashboard, Microscope } from 'lucide-react';
+import { Users, GraduationCap, BookOpen, Briefcase, Calendar, Database, LogOut, Menu, X, LayoutDashboard, Microscope, Trophy } from 'lucide-react';
 import styles from '../app/admin/admin.module.css';
 
 export default function AdminLayoutWrapper({ children }: { children: React.ReactNode }) {
@@ -40,6 +40,7 @@ export default function AdminLayoutWrapper({ children }: { children: React.React
     { href: '/admin/collaborations', label: 'Collaborations', icon: Users },
     { href: '/admin/events', label: 'Events', icon: Calendar },
     { href: '/admin/news', label: 'News & Notices', icon: Calendar },
+    { href: '/admin/achievements', label: 'Achievements', icon: Trophy },
     { href: '/admin/equipment', label: 'Equipment', icon: Microscope },
     { href: '/admin/services', label: 'Services', icon: Database },
     { href: '/admin/migrate', label: 'Migration Tool', icon: Database },

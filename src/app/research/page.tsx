@@ -47,7 +47,28 @@ export default function ResearchPage() {
     { id: "Lab Technician", label: "Lab Technician", icon: <FlaskConical size={18} /> }
   ];
 
-  const activeResearchers = researchersList.filter(r => r.category === activeTab);
+  const getOrder = (role: string) => {
+    const lowerRole = role.toLowerCase();
+    if (lowerRole.includes("professor & head")) return 1;
+    if (lowerRole.includes("associate professor")) return 2;
+    if (lowerRole.includes("project scientist ii")) return 3;
+    if (lowerRole.includes("assistant professor")) return 4;
+    if (lowerRole.includes("asst. prof. research")) return 5;
+    return 99;
+  };
+
+  const activeResearchers = researchersList
+    .filter(r => r.category === activeTab)
+    .sort((a, b) => {
+      if (activeTab === "Faculty") {
+        const orderA = getOrder(a.role || "");
+        const orderB = getOrder(b.role || "");
+        if (orderA !== orderB) return orderA - orderB;
+        // Optional: sort alphabetically by name if roles are same
+        return (a.name || "").localeCompare(b.name || "");
+      }
+      return 0;
+    });
 
   return (
     <div className="section container">

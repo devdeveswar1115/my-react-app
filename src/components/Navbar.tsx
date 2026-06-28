@@ -55,6 +55,7 @@ export function Navbar() {
               <Link href="/equipment">Equipment</Link>
               <Link href="/research">Researchers & Publications</Link>
               <Link href="/projects">Projects</Link>
+              <Link href="/achievements">Achievements</Link>
             </div>
           </div>
 
@@ -121,6 +122,7 @@ export function Navbar() {
           <Link href="/equipment" className={styles.mobileNavLink} style={{ marginLeft: '1rem' }} onClick={() => setMobileOpen(false)}>Equipment</Link>
           <Link href="/research" className={styles.mobileNavLink} style={{ marginLeft: '1rem' }} onClick={() => setMobileOpen(false)}>Researchers & Publications</Link>
           <Link href="/projects" className={styles.mobileNavLink} style={{ marginLeft: '1rem' }} onClick={() => setMobileOpen(false)}>Projects</Link>
+          <Link href="/achievements" className={styles.mobileNavLink} style={{ marginLeft: '1rem' }} onClick={() => setMobileOpen(false)}>Achievements</Link>
           <div style={{ padding: '0.5rem', fontWeight: 'bold' }}>Services</div>
           <Link href="/services" className={styles.mobileNavLink} style={{ marginLeft: '1rem' }} onClick={() => setMobileOpen(false)}>Our Services</Link>
           <Link href="/services/collaborate" className={styles.mobileNavLink} style={{ marginLeft: '1rem' }} onClick={() => setMobileOpen(false)}>Collaborate With Us</Link>
