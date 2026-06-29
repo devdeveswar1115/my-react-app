@@ -29,10 +29,10 @@ export function Footer() {
         <div className={styles.footerLinks}>
           <h4 className={styles.heading}>Quick Links</h4>
           <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/equipment">Equipment</Link></li>
-            <li><Link href="/research">Researchers</Link></li>
-            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/internships">Internship & Training</Link></li>
+            <li><Link href="/collaborations">Collaborate With Us</Link></li>
+            <li><Link href="/student-resources">Student Resource Hub</Link></li>
           </ul>
         </div>
 

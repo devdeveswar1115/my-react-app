@@ -1,12 +1,30 @@
 "use client";
 
+import { useEffect, useState } from 'react';
+import { getDocuments } from '@/services/firebaseCrud';
 import { labData } from "@/data/lab";
 import { Microscope, Award, Users, Trophy } from "lucide-react";
 import Link from "next/link";
 import styles from "../page.module.css";
 
 export default function AboutPage() {
-  const { about, gallery } = labData;
+  const { about } = labData;
+  const [gallery, setGallery] = useState<any[]>([]);
+  const [loadingGallery, setLoadingGallery] = useState(true);
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const data = await getDocuments('labEnvironment');
+        setGallery(data);
+      } catch (error) {
+        console.error("Failed to load lab environment images:", error);
+      } finally {
+        setLoadingGallery(false);
+      }
+    };
+    fetchGallery();
+  }, []);
 
   return (
     <div className="section container">
@@ -75,15 +93,21 @@ export default function AboutPage() {
         <p className="section-subtitle" style={{ textAlign: 'center' }}>State-of-the-art facilities designed for groundbreaking discoveries.</p>
 
         <div className={styles.galleryGrid} style={{ marginTop: '3rem' }}>
-          {gallery.map((img) => (
-            <div key={img.id} className={styles.galleryItem}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img.url} alt={img.caption} className={styles.galleryImg} />
-              <div className={styles.galleryCaption}>
-                <h4>{img.caption}</h4>
+          {loadingGallery ? (
+            <p style={{ textAlign: 'center', width: '100%', gridColumn: '1 / -1' }}>Loading gallery...</p>
+          ) : gallery.length === 0 ? (
+            <p style={{ textAlign: 'center', width: '100%', gridColumn: '1 / -1' }}>No images available in the gallery yet.</p>
+          ) : (
+            gallery.map((img) => (
+              <div key={img.id} className={styles.galleryItem}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={img.imageUrl} alt={img.caption} className={styles.galleryImg} />
+                <div className={styles.galleryCaption}>
+                  <h4>{img.caption}</h4>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
 

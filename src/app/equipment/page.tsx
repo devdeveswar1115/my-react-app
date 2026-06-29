@@ -13,7 +13,12 @@ export default function EquipmentPage() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getDocuments('equipment');
-      setEquipmentList(data);
+      const sortedData = data.sort((a: any, b: any) => {
+        const timeA = a.createdAt?.toDate?.()?.getTime() || 0;
+        const timeB = b.createdAt?.toDate?.()?.getTime() || 0;
+        return timeB - timeA;
+      });
+      setEquipmentList(sortedData);
     };
     fetchData();
   }, []);

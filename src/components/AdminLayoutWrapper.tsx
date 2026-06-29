@@ -42,6 +42,7 @@ export default function AdminLayoutWrapper({ children }: { children: React.React
     { href: '/admin/news', label: 'News & Notices', icon: Calendar },
     { href: '/admin/achievements', label: 'Achievements', icon: Trophy },
     { href: '/admin/equipment', label: 'Equipment', icon: Microscope },
+    { href: '/admin/lab-environment', label: 'Lab Environment', icon: Microscope },
     { href: '/admin/services', label: 'Services', icon: Database },
     { href: '/admin/migrate', label: 'Migration Tool', icon: Database },
   ];

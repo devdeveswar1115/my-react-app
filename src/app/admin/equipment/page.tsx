@@ -21,7 +21,12 @@ export default function EquipmentPage() {
   const fetchEquipment = async () => {
     setLoading(true);
     const data = await getDocuments('equipment');
-    setEquipment(data);
+    const sortedData = data.sort((a: any, b: any) => {
+      const timeA = a.createdAt?.toDate?.()?.getTime() || 0;
+      const timeB = b.createdAt?.toDate?.()?.getTime() || 0;
+      return timeB - timeA;
+    });
+    setEquipment(sortedData);
     setLoading(false);
   };
 
