@@ -31,7 +31,7 @@ export function Footer() {
           <ul>
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/internships">Internship & Training</Link></li>
-            <li><Link href="/collaborations">Collaborate With Us</Link></li>
+            <li><Link href="/services/collaborate">Collaborate With Us</Link></li>
             <li><Link href="/student-resources">Student Resource Hub</Link></li>
           </ul>
         </div>
