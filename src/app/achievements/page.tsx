@@ -37,93 +37,104 @@ export default function AchievementsPage() {
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: '3rem' }}>Loading achievements...</div>
-      ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-          {achievementsList.map((item) => {
-            const isExpanded = expandedId === item.id;
-            return (
-              <div 
-                key={item.id} 
-                className="card" 
-                style={{ display: 'flex', flexDirection: 'column', height: isExpanded ? 'auto' : '100%', cursor: 'pointer', transition: 'all 0.3s' }}
-                onClick={() => setExpandedId(isExpanded ? null : item.id)}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>
-                  <Calendar size={14} />
-                  <span>{item.date ? new Date(item.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : 'Date not specified'}</span>
-                </div>
-                
-                <h3 style={{ fontSize: '1.25rem', color: 'var(--primary)', lineHeight: 1.4, fontWeight: 'bold', margin: 0 }}>
-                  {item.title}
-                </h3>
-                
-                {isExpanded && (
-                  <div style={{ marginTop: '1.5rem' }}>
-                    {item.image && (
-                      <div style={{ marginBottom: '1.5rem', overflow: 'hidden', borderRadius: '8px' }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={item.image} alt={item.title} style={{ width: '100%', maxHeight: '500px', objectFit: 'contain', backgroundColor: '#000' }} />
-                      </div>
-                    )}
-                    
-                    <p style={{ color: 'var(--text-main)', fontSize: '0.95rem', lineHeight: 1.6, whiteSpace: 'pre-line' }}>
-                      {item.body}
-                    </p>
-                    
-                    {item.linkUrl && (
-                      <div style={{ marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
-                        <a 
-                          href={item.linkUrl.startsWith('http') ? item.linkUrl : `https://${item.linkUrl}`} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          style={{ 
-                            display: 'inline-flex', 
-                            alignItems: 'center', 
-                            gap: '0.5rem', 
-                            color: 'var(--primary)', 
-                            fontWeight: 600,
-                            textDecoration: 'none',
-                            transition: 'opacity 0.2s'
-                          }}
-                          onClick={(e) => e.stopPropagation()} // Prevent card collapse when clicking link
-                          onMouseOver={e => e.currentTarget.style.opacity = '0.8'}
-                          onMouseOut={e => e.currentTarget.style.opacity = '1'}
-                        >
-                          {item.linkText || 'View Document'} <ExternalLink size={16} />
-                        </a>
-                      </div>
-                    )}
-                    
-                    <div style={{ marginTop: item.linkUrl ? '1rem' : '2rem', display: 'flex', justifyContent: 'flex-start' }}>
-                      <button 
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '0.5rem',
-                          padding: '0.5rem 1rem',
-                          backgroundColor: 'var(--bg-alt)',
-                          border: '1px solid var(--border-color)',
-                          borderRadius: '4px',
-                          color: 'var(--text-main)',
-                          cursor: 'pointer',
-                          fontWeight: 500,
-                          transition: 'background-color 0.2s'
-                        }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setExpandedId(null);
-                        }}
-                        onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--border-color)'}
-                        onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-alt)'}
-                      >
-                        <ArrowLeft size={16} /> Go back to achievement list
-                      </button>
-                    </div>
-                  </div>
-                )}
+      ) : expandedId ? (
+        <div style={{ margin: '0 auto', maxWidth: '800px' }}>
+          {achievementsList.filter(a => a.id === expandedId).map((item) => (
+            <div key={item.id} className="card" style={{ display: 'flex', flexDirection: 'column', padding: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1rem' }}>
+                <Calendar size={14} />
+                <span>{item.date ? new Date(item.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : 'Date not specified'}</span>
               </div>
-            );
-          })}
+              
+              <h2 style={{ fontSize: '2rem', color: 'var(--primary)', lineHeight: 1.3, fontWeight: 'bold', marginBottom: '1.5rem' }}>
+                {item.title}
+              </h2>
+              
+              {item.image && (
+                <div style={{ marginBottom: '2rem', overflow: 'hidden', borderRadius: '8px' }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={item.image} alt={item.title} style={{ width: '100%', maxHeight: '500px', objectFit: 'contain', backgroundColor: '#000' }} />
+                </div>
+              )}
+              
+              <p style={{ color: 'var(--text-main)', fontSize: '1.05rem', lineHeight: 1.8, whiteSpace: 'pre-line' }}>
+                {item.body}
+              </p>
+              
+              {item.linkUrl && (
+                <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)' }}>
+                  <a 
+                    href={item.linkUrl.startsWith('http') ? item.linkUrl : `https://${item.linkUrl}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ 
+                      display: 'inline-flex', 
+                      alignItems: 'center', 
+                      gap: '0.5rem', 
+                      color: 'var(--primary)', 
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      transition: 'opacity 0.2s'
+                    }}
+                    onMouseOver={e => e.currentTarget.style.opacity = '0.8'}
+                    onMouseOut={e => e.currentTarget.style.opacity = '1'}
+                  >
+                    {item.linkText || 'View Document'} <ExternalLink size={16} />
+                  </a>
+                </div>
+              )}
+              
+              <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'flex-start' }}>
+                <button 
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    padding: '0.75rem 1.5rem',
+                    backgroundColor: 'var(--bg-alt)',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: '6px',
+                    color: 'var(--text-main)',
+                    cursor: 'pointer',
+                    fontWeight: 600,
+                    transition: 'all 0.2s',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+                  }}
+                  onClick={() => setExpandedId(null)}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--border-color)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--bg-alt)';
+                    e.currentTarget.style.transform = 'none';
+                  }}
+                >
+                  <ArrowLeft size={18} /> Go back to achievements list
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '800px', margin: '0 auto' }}>
+          {achievementsList.map((item) => (
+            <div 
+              key={item.id} 
+              className="card" 
+              style={{ display: 'flex', flexDirection: 'column', height: '100%', cursor: 'pointer', transition: 'all 0.3s' }}
+              onClick={() => setExpandedId(item.id)}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>
+                <Calendar size={14} />
+                <span>{item.date ? new Date(item.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : 'Date not specified'}</span>
+              </div>
+              
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--primary)', lineHeight: 1.4, fontWeight: 'bold', margin: 0 }}>
+                {item.title}
+              </h3>
+            </div>
+          ))}
           {achievementsList.length === 0 && (
             <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', backgroundColor: 'var(--bg-alt)', borderRadius: '8px' }}>
               <Trophy size={48} style={{ color: 'var(--border-color)', margin: '0 auto 1rem' }} />

@@ -15,6 +15,7 @@ export default function MOUsPage() {
   const [partner, setPartner] = useState('');
   const [description, setDescription] = useState('');
   const [logo, setLogo] = useState('');
+  const [linkUrl, setLinkUrl] = useState('');
 
   const fetchMOUs = async () => {
     setLoading(true);
@@ -31,6 +32,7 @@ export default function MOUsPage() {
     setPartner('');
     setDescription('');
     setLogo('');
+    setLinkUrl('');
     setCurrentEditId(null);
   };
 
@@ -39,6 +41,7 @@ export default function MOUsPage() {
       setPartner(item.partner || '');
       setDescription(item.description || '');
       setLogo(item.logo || '');
+      setLinkUrl(item.linkUrl || '');
       setCurrentEditId(item.id);
     } else {
       resetForm();
@@ -53,7 +56,7 @@ export default function MOUsPage() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = { partner, description, logo };
+    const data = { partner, description, logo, linkUrl };
 
     if (currentEditId) {
       await updateDocument('mou', currentEditId, data);
@@ -131,6 +134,10 @@ export default function MOUsPage() {
               <div className={styles.formGroup}>
                 <label>Institution Logo</label>
                 <ImageUpload folder="mou" currentImageUrl={logo} onUploadSuccess={url => setLogo(url)} />
+              </div>
+              <div className={styles.formGroup}>
+                <label>More Information Link</label>
+                <input value={linkUrl} onChange={e => setLinkUrl(e.target.value)} placeholder="e.g. Google Drive PDF Link" />
               </div>
               
               <div className={styles.modalActions}>

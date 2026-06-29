@@ -1,9 +1,20 @@
 "use client";
 
-import { GraduationCap, Award, Building, Microscope } from "lucide-react";
+import { useState } from 'react';
+import { GraduationCap, Award, Microscope, Search, Globe, Link as LinkIcon, Users, DollarSign, Clock, Briefcase, ArrowLeft } from "lucide-react";
 import styles from "./page.module.css";
+import { studentResourcesData } from "@/data/studentResources";
 
 export default function StudentResourcesPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [expandedOrg, setExpandedOrg] = useState<string | null>(null);
+
+  const filteredData = studentResourcesData.filter(item => 
+    item.Organization.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    item.Description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.Areas.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const importantLinks = [
     { name: "Department of Science & Technology", short: "DST", url: "https://dst.gov.in/", logo: "/Official_India_Science_Logos/DST_Logo.png" },
     { name: "SERB PRISM", short: "SERB", url: "https://serbonline.in/SERB/prism", logo: "/Official_India_Science_Logos/SERB_PRISM_Logo.jpg" },
@@ -15,32 +26,9 @@ export default function StudentResourcesPage() {
   // Duplicated for seamless infinite scrolling
   const duplicatedLinks = [...importantLinks, ...importantLinks, ...importantLinks];
 
-  const grants = [
-    {
-      title: "ANRF (Formerly SERB)",
-      overview: "ANRF (Formerly SERB) is a major funding opportunity supporting research and academic development.",
-      support: "Research grants, startup grants, international collaboration, equipment support",
-      eligibility: "Faculty, scientists, researchers in recognized institutions",
-      age: "No fixed age limit (scheme specific)",
-      funding: "₹30 Lakhs to multi-crore projects",
-      preferred: "Drug delivery, life sciences, pharmacy, biotechnology",
-      selection: "Apply online, peer review, expert evaluation",
-      website: "https://www.anrf.gov.in",
-      icon: <Building size={32} />
-    },
-    {
-      title: "DBT-JRF",
-      overview: "DBT-JRF is a major funding opportunity supporting research and academic development.",
-      support: "PhD fellowship, contingency, research training",
-      eligibility: "M.Pharm, M.Sc., Biotechnology graduates",
-      age: "Usually ≤28 years with relaxation",
-      funding: "Govt JRF/SRF rates",
-      preferred: "Biotechnology, molecular biology, cancer research",
-      selection: "BET examination + merit",
-      website: "https://www.dbtjrf.gov.in",
-      icon: <GraduationCap size={32} />
-    }
-  ];
+
+
+  const expandedResource = expandedOrg ? studentResourcesData.find(r => r.Organization === expandedOrg) : null;
 
   return (
     <div className="section container">
@@ -49,71 +37,184 @@ export default function StudentResourcesPage() {
         Explore a curated list of project grants, fellowships, and fund providers to support your academic and research journey.
       </p>
 
-
-
-      <div style={{ display: 'grid', gap: '2rem', marginTop: '3rem' }}>
-        {grants.map((grant, idx) => (
-          <div key={idx} style={{ 
-            backgroundColor: 'var(--surface)', 
-            padding: '2rem', 
-            borderRadius: 'var(--radius)', 
-            border: '1px solid var(--border)',
-            boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', color: 'var(--primary)' }}>
-              {grant.icon}
-              <h2 style={{ fontSize: '1.5rem', margin: 0 }}>{grant.title}</h2>
+      {expandedResource ? (
+        <div style={{ marginTop: '2rem' }}>
+          <button 
+            onClick={() => setExpandedOrg(null)}
+            className="btn"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2rem', background: 'var(--surface)', color: 'var(--text-main)', border: '1px solid var(--border)', cursor: 'pointer' }}
+          >
+            <ArrowLeft size={16} /> Go back to resource list
+          </button>
+          
+          <div className={styles.resourceCard} style={{ cursor: 'default', maxWidth: '900px', margin: '0 auto', gridColumn: '1 / -1' }}>
+            <div className={styles.cardHeader}>
+                <div className={`${styles.orgIconWrapper} ${styles.orgIconWrapperLarge}`}>
+                  {expandedResource.Logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={expandedResource.Logo} alt={`${expandedResource.Organization} Logo`} className={styles.orgLogoImage} />
+                  ) : (
+                    expandedResource.Organization.charAt(0)
+                  )}
+                </div>
+                <div className={styles.headerText}>
+                  <h2 className={styles.orgName} style={{ fontSize: '2rem' }}>{expandedResource.Organization}</h2>
+                  <p className={styles.orgDesc} style={{ fontSize: '1.1rem' }}>{expandedResource.Description}</p>
+                </div>
             </div>
             
-            <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: 'var(--text-main)' }}>
-              <strong>Overview:</strong> {grant.overview}
-            </p>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-              <div><strong>Support Provided:</strong> {grant.support}</div>
-              <div><strong>Eligibility:</strong> {grant.eligibility}</div>
-              <div><strong>Age Criteria:</strong> {grant.age}</div>
-              <div><strong>Funding/Benefits:</strong> {grant.funding}</div>
-              <div><strong>Preferred Areas:</strong> {grant.preferred}</div>
-              <div><strong>Selection Process:</strong> {grant.selection}</div>
+            <div className={styles.cardTags} style={{ marginTop: '1.5rem', marginBottom: '2rem' }}>
+              {expandedResource.Areas.split(',').map((area, i) => (
+                <span key={i} className={styles.tag}>{area.trim()}</span>
+              ))}
             </div>
-            
-            <div style={{ marginTop: '1rem' }}>
-              <a href={grant.website} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Visit Official Website <Award size={18} />
-              </a>
+
+            <div className={styles.detailGrid} style={{ borderTop: '1px solid var(--border)', paddingTop: '2rem' }}>
+              <div className={styles.detailItem}>
+                <Briefcase className={styles.detailIcon} size={20} />
+                <div>
+                  <strong>Support Provided</strong>
+                  <p>{expandedResource.Support}</p>
+                </div>
+              </div>
+              <div className={styles.detailItem}>
+                <Users className={styles.detailIcon} size={20} />
+                <div>
+                  <strong>Eligibility</strong>
+                  <p>{expandedResource.Eligibility}</p>
+                </div>
+              </div>
+              <div className={styles.detailItem}>
+                <Award className={styles.detailIcon} size={20} />
+                <div>
+                  <strong>Age Criteria</strong>
+                  <p>{expandedResource.Age}</p>
+                </div>
+              </div>
+              <div className={styles.detailItem}>
+                <DollarSign className={styles.detailIcon} size={20} />
+                <div>
+                  <strong>Funding / Benefits</strong>
+                  <p>{expandedResource.Funding}</p>
+                </div>
+              </div>
+              <div className={styles.detailItem}>
+                <Clock className={styles.detailIcon} size={20} />
+                <div>
+                  <strong>Notification Frequency</strong>
+                  <p>{expandedResource.Frequency}</p>
+                </div>
+              </div>
+              <div className={styles.detailItem}>
+                <GraduationCap className={styles.detailIcon} size={20} />
+                <div>
+                  <strong>Selection Process</strong>
+                  <p>{expandedResource.Selection}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.cardActions} style={{ borderTop: '1px solid var(--border)', paddingTop: '2rem', marginTop: '2rem' }}>
+              <div className={styles.linkActions}>
+                <a href={expandedResource.NotificationUrl} target="_blank" rel="noopener noreferrer" className={styles.actionLink}>
+                  <LinkIcon size={16} /> Official Notification
+                </a>
+                <a href={expandedResource.Website} target="_blank" rel="noopener noreferrer" className={styles.actionLinkPrimary}>
+                  <Globe size={16} /> Official Website
+                </a>
+              </div>
             </div>
           </div>
-        ))}
-
-        <div style={{ textAlign: 'center', marginTop: '2rem', padding: '2rem', backgroundColor: 'var(--bg-alt)', borderRadius: 'var(--radius)' }}>
-          <Microscope size={48} style={{ color: 'var(--text-muted)', marginBottom: '1rem', display: 'inline-block' }} />
-          <h3>And Many More Opportunities...</h3>
-          <p>We constantly update our resources hub. Keep an eye out for new fellowships and grants.</p>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className={styles.searchContainer}>
+            <div className={styles.searchWrapper}>
+              <Search className={styles.searchIcon} size={20} />
+              <input 
+                type="text" 
+                placeholder="Search resources, organizations, or preferred areas..." 
+                className={styles.searchInput}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+          </div>
 
-      {/* Important Links moved to bottom */}
-      <div style={{ marginTop: '4rem', marginBottom: '2rem' }}>
-        <h2 style={{ fontSize: '1.75rem', color: 'var(--primary)', marginBottom: '1.5rem', textAlign: 'center' }}>
-          Important Links
-        </h2>
-        <div className={styles.marqueeWrapper}>
-          <div className={styles.marqueeTrack}>
-            {duplicatedLinks.map((link, idx) => (
-              <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className={styles.linkCard}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={link.logo} 
-                  alt={`${link.short} Logo`} 
-                  className={styles.logoPlaceholder} 
-                />
-                <span className={styles.linkName}>{link.name}</span>
-              </a>
+          <div className={styles.cardsGrid}>
+            {filteredData.map((row, idx) => (
+              <div key={idx} className={styles.resourceCard}>
+                <div className={styles.cardHeader}>
+                  <div className={styles.orgIconWrapper}>
+                    {row.Logo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={row.Logo} alt={`${row.Organization} Logo`} className={styles.orgLogoImage} />
+                    ) : (
+                      row.Organization.charAt(0)
+                    )}
+                  </div>
+                  <div className={styles.headerText}>
+                    <h2 className={styles.orgName}>{row.Organization}</h2>
+                    <p className={styles.orgDesc}>{row.Description}</p>
+                  </div>
+                </div>
+                
+                <div className={styles.cardTags}>
+                  {row.Areas.split(',').slice(0, 3).map((area, i) => (
+                    <span key={i} className={styles.tag}>{area.trim()}</span>
+                  ))}
+                  {row.Areas.split(',').length > 3 && (
+                    <span className={styles.tag}>+{row.Areas.split(',').length - 3}</span>
+                  )}
+                </div>
+
+                <div className={styles.cardActions}>
+                  <button 
+                    className={styles.expandBtn} 
+                    onClick={() => setExpandedOrg(row.Organization)}
+                  >
+                    View Details
+                  </button>
+                  
+                  <div className={styles.linkActions}>
+                    <a href={row.Website} target="_blank" rel="noopener noreferrer" className={styles.actionLinkPrimary}>
+                      <Globe size={14} /> Website
+                    </a>
+                  </div>
+                </div>
+              </div>
             ))}
+            {filteredData.length === 0 && (
+              <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '4rem', color: 'var(--text-muted)' }}>
+                <Microscope size={48} style={{ opacity: 0.3, marginBottom: '1rem' }} />
+                <h3>No resources found matching your search.</h3>
+              </div>
+            )}
           </div>
-        </div>
-      </div>
+
+          {/* Important Links moved to bottom */}
+          <div style={{ marginTop: '4rem', marginBottom: '2rem' }}>
+            <h2 style={{ fontSize: '1.75rem', color: 'var(--primary)', marginBottom: '1.5rem', textAlign: 'center' }}>
+              Important Links
+            </h2>
+            <div className={styles.marqueeWrapper}>
+              <div className={styles.marqueeTrack}>
+                {duplicatedLinks.map((link, idx) => (
+                  <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className={styles.linkCard}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={link.logo} 
+                      alt={`${link.short} Logo`} 
+                      className={styles.logoPlaceholder} 
+                    />
+                    <span className={styles.linkName}>{link.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

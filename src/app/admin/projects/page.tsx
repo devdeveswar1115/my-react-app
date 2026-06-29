@@ -18,6 +18,7 @@ export default function ProjectsPage() {
   const [image, setImage] = useState('');
   const [facultyLead, setFacultyLead] = useState('');
   const [fundingAgency, setFundingAgency] = useState('');
+  const [linkUrl, setLinkUrl] = useState('');
 
   const fetchProjects = async () => {
     setLoading(true);
@@ -37,6 +38,7 @@ export default function ProjectsPage() {
     setImage('');
     setFacultyLead('');
     setFundingAgency('');
+    setLinkUrl('');
     setCurrentEditId(null);
   };
 
@@ -48,6 +50,7 @@ export default function ProjectsPage() {
       setImage(proj.image || '');
       setFacultyLead(proj.facultyLead || proj.lead || '');
       setFundingAgency(proj.fundingAgency || '');
+      setLinkUrl(proj.linkUrl || '');
       setCurrentEditId(proj.id);
     } else {
       resetForm();
@@ -62,7 +65,7 @@ export default function ProjectsPage() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = { title, description, status, image, facultyLead, fundingAgency };
+    const data = { title, description, status, image, facultyLead, fundingAgency, linkUrl };
 
     if (currentEditId) {
       await updateDocument('projects', currentEditId, data);
@@ -179,6 +182,10 @@ export default function ProjectsPage() {
               <div className={styles.formGroup}>
                 <label>Image</label>
                 <ImageUpload folder="projects" currentImageUrl={image} onUploadSuccess={url => setImage(url)} />
+              </div>
+              <div className={styles.formGroup}>
+                <label>More Information Link</label>
+                <input value={linkUrl} onChange={e => setLinkUrl(e.target.value)} placeholder="e.g. Google Drive PDF Link" />
               </div>
               
               <div className={styles.modalActions}>

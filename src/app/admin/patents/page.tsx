@@ -13,6 +13,7 @@ export default function PatentsPage() {
   // Form State
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
+  const [linkUrl, setLinkUrl] = useState('');
 
   const fetchPatents = async () => {
     setLoading(true);
@@ -28,6 +29,7 @@ export default function PatentsPage() {
   const resetForm = () => {
     setTitle('');
     setDetails('');
+    setLinkUrl('');
     setCurrentEditId(null);
   };
 
@@ -35,6 +37,7 @@ export default function PatentsPage() {
     if (pat) {
       setTitle(pat.title || '');
       setDetails(pat.details || '');
+      setLinkUrl(pat.linkUrl || '');
       setCurrentEditId(pat.id);
     } else {
       resetForm();
@@ -49,7 +52,7 @@ export default function PatentsPage() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = { title, details };
+    const data = { title, details, linkUrl };
 
     if (currentEditId) {
       await updateDocument('patents', currentEditId, data);
@@ -123,6 +126,10 @@ export default function PatentsPage() {
                   style={{ width: '100%', padding: '0.75rem', borderRadius: '4px', border: '1px solid var(--border)', backgroundColor: 'var(--background)', color: 'var(--text-main)' }}
                   rows={4}
                 />
+              </div>
+              <div className={styles.formGroup}>
+                <label>More Information Link</label>
+                <input value={linkUrl} onChange={e => setLinkUrl(e.target.value)} placeholder="e.g. Google Drive PDF Link" />
               </div>
               
               <div className={styles.modalActions}>

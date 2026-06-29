@@ -16,6 +16,7 @@ export default function CollaborationsPage() {
   const [investigator, setInvestigator] = useState('');
   const [project, setProject] = useState('');
   const [logo, setLogo] = useState('');
+  const [linkUrl, setLinkUrl] = useState('');
 
   const fetchCollaborations = async () => {
     setLoading(true);
@@ -33,6 +34,7 @@ export default function CollaborationsPage() {
     setInvestigator('');
     setProject('');
     setLogo('');
+    setLinkUrl('');
     setCurrentEditId(null);
   };
 
@@ -42,6 +44,7 @@ export default function CollaborationsPage() {
       setInvestigator(item.investigator || '');
       setProject(item.project || '');
       setLogo(item.logo || '');
+      setLinkUrl(item.linkUrl || '');
       setCurrentEditId(item.id);
     } else {
       resetForm();
@@ -56,7 +59,7 @@ export default function CollaborationsPage() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = { institution, investigator, project, logo };
+    const data = { institution, investigator, project, logo, linkUrl };
 
     if (currentEditId) {
       await updateDocument('collaborations', currentEditId, data);
@@ -135,6 +138,10 @@ export default function CollaborationsPage() {
               <div className={styles.formGroup}>
                 <label>Institution Logo</label>
                 <ImageUpload folder="collaborations" currentImageUrl={logo} onUploadSuccess={url => setLogo(url)} />
+              </div>
+              <div className={styles.formGroup}>
+                <label>More Information Link</label>
+                <input value={linkUrl} onChange={e => setLinkUrl(e.target.value)} placeholder="e.g. Google Drive PDF Link" />
               </div>
               
               <div className={styles.modalActions}>

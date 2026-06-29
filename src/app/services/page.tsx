@@ -23,6 +23,11 @@ export default function ServicesPage() {
   useEffect(() => {
     const fetchServices = async () => {
       const data = await getDocuments('services');
+      data.sort((a: any, b: any) => {
+        const timeA = a.updatedAt?.toMillis ? a.updatedAt.toMillis() : (a.createdAt?.toMillis ? a.createdAt.toMillis() : 0);
+        const timeB = b.updatedAt?.toMillis ? b.updatedAt.toMillis() : (b.createdAt?.toMillis ? b.createdAt.toMillis() : 0);
+        return timeA - timeB; // Ascending: recent at the bottom
+      });
       setServicesList(data);
     };
     fetchServices();

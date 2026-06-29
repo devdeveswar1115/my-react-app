@@ -47,7 +47,15 @@ export function Footer() {
                 2. 5th Floor, MLVP<br />
                 SIKSHA O ANUSANDHAN, CAMPUS- 2<br />
                 KALINGANAGAR, BHUBANESWAR<br />
-                ODISHA, PIN- 751003
+                ODISHA, PIN- 751003<br />
+                <iframe
+                  src="https://maps.google.com/maps?q=7QMG%2BP48,+Kalinganagar,+Bhubaneswar,+Odisha+751029&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="150"
+                  style={{ border: 0, borderRadius: '8px', marginTop: '1rem', marginBottom: '1rem' }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                ></iframe>
               </span>
             </li>
             <li>

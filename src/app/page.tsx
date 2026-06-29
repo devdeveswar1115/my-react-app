@@ -79,8 +79,8 @@ export default function Home() {
           <div className={styles.homeSplitLayout}>
             {/* Events & Highlights (Left) */}
             <div className={styles.homeSplitLeft}>
-              <h2 className="section-title" style={{ textAlign: "center" }}>Events & Highlights</h2>
-              <p className="section-subtitle" style={{ textAlign: "center", marginBottom: '2rem' }}>Catch up on our latest workshops, seminars, and lab activities.</p>
+              <h2 className="section-title" style={{ textAlign: "center", color: 'var(--text-main)' }}>Events & Highlights</h2>
+              <p className="section-subtitle" style={{ textAlign: "center", marginBottom: '2rem', color: 'var(--text-muted)' }}>Catch up on our latest workshops, seminars, and lab activities.</p>
               <EventsSlider />
             </div>
 
@@ -101,12 +101,14 @@ export default function Home() {
                 </div>
 
                 <div className={styles.newsListContainer}>
-                  {newsList.map(news => (
-                    <Link key={news.id} href={`/news/${news.id}`} className={styles.newsItem}>
-                      {news.title}
-                    </Link>
-                  ))}
-                  {newsList.length === 0 && <p style={{ textAlign: 'center', color: 'var(--text-muted)' }}>No recent news.</p>}
+                  <div className={styles.newsListInner}>
+                    {newsList.map(news => (
+                      <Link key={news.id} href={`/news/${news.id}`} className={styles.newsItem}>
+                        {news.title}
+                      </Link>
+                    ))}
+                    {newsList.length === 0 && <p style={{ textAlign: 'center', color: 'var(--text-muted)' }}>No recent news.</p>}
+                  </div>
                 </div>
               </div>
             </div>

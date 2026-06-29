@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { User, Calendar } from "lucide-react";
+import { User, Calendar, ExternalLink } from "lucide-react";
 import { getDocuments } from "@/services/firebaseCrud";
 import styles from "./page.module.css";
 
@@ -87,6 +87,19 @@ export default function ProjectsPage() {
                       <span>{project.fundingAgency || project.timeline || 'Ongoing'}</span>
                     </div>
                   </div>
+                  
+                  {project.linkUrl && (
+                    <div style={{ marginTop: '1rem' }}>
+                      <a 
+                        href={project.linkUrl.startsWith('http') ? project.linkUrl : `https://${project.linkUrl}`}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem' }}
+                      >
+                        More Information <ExternalLink size={14} />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -104,6 +117,16 @@ export default function ProjectsPage() {
                   <li key={item.id}>
                     <strong>{item.title}</strong>
                     {item.details && <p>{item.details}</p>}
+                    {item.linkUrl && (
+                      <a 
+                        href={item.linkUrl.startsWith('http') ? item.linkUrl : `https://${item.linkUrl}`}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem', marginTop: '0.5rem' }}
+                      >
+                        Read More <ExternalLink size={14} />
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -125,6 +148,16 @@ export default function ProjectsPage() {
                     <div>
                       <strong>{item.partner}</strong>
                       {item.description && <p>{item.description}</p>}
+                      {item.linkUrl && (
+                        <a 
+                          href={item.linkUrl.startsWith('http') ? item.linkUrl : `https://${item.linkUrl}`}
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem', marginTop: '0.5rem' }}
+                        >
+                          More Information <ExternalLink size={14} />
+                        </a>
+                      )}
                     </div>
                   </li>
                 ))}
@@ -151,6 +184,16 @@ export default function ProjectsPage() {
                     <h3 style={{ marginBottom: '0.5rem', color: 'var(--primary)' }}>{item.institution}</h3>
                     {item.investigator && <p style={{ fontSize: '0.9rem' }}><strong>Investigator:</strong> {item.investigator}</p>}
                     {item.project && <p style={{ fontSize: '0.9rem' }}><strong>Project:</strong> {item.project}</p>}
+                    {item.linkUrl && (
+                      <a 
+                        href={item.linkUrl.startsWith('http') ? item.linkUrl : `https://${item.linkUrl}`}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem', marginTop: '1rem' }}
+                      >
+                        More Information <ExternalLink size={14} />
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
